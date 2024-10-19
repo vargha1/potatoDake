@@ -35,12 +35,22 @@ const audio = document.getElementById("audio");
 var click = new Audio('Sounds/click.mp3');
 var whoosh = new Audio("Sounds/whoosh.mp3")
 var ding = new Audio("Sounds/ding.mp3")
-var bloop = new Audio("Sounds/bloop.mp3")
 const darkMaterial = new T.MeshBasicMaterial({ color: 'black' });
 const materials = {};
 const scene = new T.Scene();
 const camera = new T.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000)
-const loader = new GLTFLoader().setPath("./New4/");
+
+const loadingManager = new T.LoadingManager()
+
+loadingManager.onProgress = (url, loaded, total) => {
+  document.querySelector("progress").value = (loaded / total) * 100;
+}
+
+loadingManager.onLoad = () => {
+  document.querySelector("#loadingScreen").classList.add("hidden")
+}
+
+const loader = new GLTFLoader(loadingManager).setPath("./model/");
 const loader2 = new TextureLoader()
 
 const renderer = new T.WebGLRenderer({ antialias: true, alpha: true });
@@ -184,7 +194,7 @@ window.addEventListener('resize', () => {
   bloomComposer.setSize(window.innerWidth, window.innerHeight);
 });
 
-loader.load("dake07.gltf", function VR(gltf) {
+loader.load("dake01.gltf", function VR(gltf) {
   var mesh = gltf.scene;
   console.log(mesh);
   mesh.position.set(0, 1, 0);
@@ -204,22 +214,21 @@ loader.load("dake07.gltf", function VR(gltf) {
   const transparentPlane = new T.Mesh(geometry, transparentMaterial);
   transparentPlane.position.y = 1.02;  // Slightly above the reflective surface
   // scene.add(transparentPlane);
-  console.log(mesh);
   reflector.position.y = 0
   reflector.rotation.x = - Math.PI / 2;
   scene.add(reflector);
   // mesh.children[0].children[0].traverseVisible((obj) => {
   //   obj.layers.set(0)
   // })
-  const object1 = mesh.children[0].children[0].getObjectByName("M_Dake974PIV");
-  const object2 = mesh.children[0].children[0].getObjectByName("D09PIV")
-  const object3 = mesh.children[0].children[0].getObjectByName("D05PIV")
-  const object4 = mesh.children[0].children[0].getObjectByName("D06PIV")
-  const object5 = mesh.children[0].children[0].getObjectByName("D07PIV")
-  mesh.children[0].children[0].getObjectByName("M_Dake13").position.y = 0.01;
-  mesh.children[0].children[0].getObjectByName("M_Dake13").material.transparent = true;
-  mesh.children[0].children[0].getObjectByName("M_Dake13").material.opacity = 0.90;
-  mesh.children[0].children[0].getObjectByName("M_Dake990PIV").position.y = 0.05
+  // const object1 = mesh.children[0].children[0].getObjectByName("M_Dake974PIV");
+  // const object2 = mesh.children[0].children[0].getObjectByName("D09PIV")
+  // const object3 = mesh.children[0].children[0].getObjectByName("D05PIV")
+  // const object4 = mesh.children[0].children[0].getObjectByName("D06PIV")
+  // const object5 = mesh.children[0].children[0].getObjectByName("D07PIV")
+  // mesh.children[0].children[0].getObjectByName("M_Dake13").position.y = 0.01;
+  // mesh.children[0].children[0].getObjectByName("M_Dake13").material.transparent = true;
+  // mesh.children[0].children[0].getObjectByName("M_Dake13").material.opacity = 0.90;
+  // mesh.children[0].children[0].getObjectByName("M_Dake990PIV").position.y = 0.05
   // object1.material = [
   //   new T.MeshStandardMaterial({ color: 0xffffff }),
   //   new T.MeshStandardMaterial({ color: 0xffffff }),
@@ -230,163 +239,162 @@ loader.load("dake07.gltf", function VR(gltf) {
   // ]
   // console.log(object1);
 
-  const geo5 = object1.geometry;
-  const posAtr = geo5.attributes.position;
-  const positions = posAtr.array; // Directly access the array
-  const vertices = [];
+  // const geo5 = object1.geometry;
+  // const posAtr = geo5.attributes.position;
+  // const positions = posAtr.array; // Directly access the array
+  // const vertices = [];
 
-  for (let i = 0; i < posAtr.count; i++) {
-    vertices.push({
-      x: posAtr.getX(i),
-      y: posAtr.getY(i),
-      z: posAtr.getZ(i)
-    });
-  }
+  // for (let i = 0; i < posAtr.count; i++) {
+  //   vertices.push({
+  //     x: posAtr.getX(i),
+  //     y: posAtr.getY(i),
+  //     z: posAtr.getZ(i)
+  //   });
+  // }
 
-  const pointGeometry = new T.BufferGeometry();
-  pointGeometry.setAttribute('position', new T.Float32BufferAttribute(positions, 3));
-  const pointMaterial = new T.PointsMaterial({ color: 0x00ffff, size: 0.05 });
-  const points = new T.Points(pointGeometry, pointMaterial);
-  points.position.set(3.2, 6, -11.7)
-  points.layers.toggle(BLOOM_SCENE)
-  points.name = "points"
-  scene.add(points);
+  // const pointGeometry = new T.BufferGeometry();
+  // pointGeometry.setAttribute('position', new T.Float32BufferAttribute(positions, 3));
+  // const pointMaterial = new T.PointsMaterial({ color: 0x00ffff, size: 0.05 });
+  // const points = new T.Points(pointGeometry, pointMaterial);
+  // points.position.set(3.2, 6, -11.7)
+  // points.layers.toggle(BLOOM_SCENE)
+  // points.name = "points"
+  // scene.add(points);
 
-  if (object2) {
-    new TextureLoader().load("images/BSOD.png", (texture) => {
-      // تنظیمات تکسچر
-      texture.encoding = T.sRGBEncoding;
-      texture.flipY = false;  // ممکن است نیاز باشد این را تغییر دهید
+  // if (object2) {
+  //   new TextureLoader().load("images/BSOD.png", (texture) => {
+  //     // تنظیمات تکسچر
+  //     texture.encoding = T.sRGBEncoding;
+  //     texture.flipY = false;  // ممکن است نیاز باشد این را تغییر دهید
 
-      // تنظیم wrapping و filtering
-      texture.wrapS = texture.wrapT = T.ClampToEdgeWrapping;
-      texture.minFilter = T.LinearFilter;
-      texture.magFilter = T.LinearFilter;
-      texture.repeat.set(15, 10);
-      texture.wrapS = 1000;
-      texture.wrapT = 1000;
-      texture.offset.set(0.35, -0.05);
-      // texture.rotation = 0;
-      // ایجاد متریال جدید
-      const material2 = new T.MeshStandardMaterial({
-        map: texture,
-      });
+  //     // تنظیم wrapping و filtering
+  //     texture.wrapS = texture.wrapT = T.ClampToEdgeWrapping;
+  //     texture.minFilter = T.LinearFilter;
+  //     texture.magFilter = T.LinearFilter;
+  //     texture.repeat.set(15, 10);
+  //     texture.wrapS = 1000;
+  //     texture.wrapT = 1000;
+  //     texture.offset.set(0.35, -0.05);
+  //     // texture.rotation = 0;
+  //     // ایجاد متریال جدید
+  //     const material2 = new T.MeshStandardMaterial({
+  //       map: texture,
+  //     });
 
-      // اعمال متریال به آبجکت
-      object2.material = material2;
-      object2.material.needsUpdate = true;
-      object2.material.toneMapped = true;
-      // بررسی UV mapping
-      if (!object2.geometry.attributes.uv) {
-        console.warn("No UV mapping found on the object. Texture may not display correctly.");
-      } else {
-        // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-        // object2.geometry.attributes.uv.needsUpdate = true;
-      }
+  //     // اعمال متریال به آبجکت
+  //     object2.material = material2;
+  //     object2.material.needsUpdate = true;
+  //     object2.material.toneMapped = true;
+  //     // بررسی UV mapping
+  //     if (!object2.geometry.attributes.uv) {
+  //       console.warn("No UV mapping found on the object. Texture may not display correctly.");
+  //     } else {
+  //       // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
+  //       // object2.geometry.attributes.uv.needsUpdate = true;
+  //     }
 
-      // درخواست رندر مجدد صحنه (اگر نیاز است)
-      if (renderer && scene && camera) {
-        renderer.render(scene, camera);
-      }
-    });
-  }
-  if (object3) {
-    // اعمال متریال به آبجکت
-    object3.material = new T.MeshStandardMaterial({ map: video });
-    object3.material.map.repeat.set(20, 15);
-    object3.material.map.wrapS = 1000;
-    object3.material.map.wrapT = 1002;
-    // object3.material.needsUpdate = true;
-    object3.material.toneMapped = false;
-    // بررسی UV mapping
-    if (!object3.geometry.attributes.uv) {
-      console.warn("No UV mapping found on the object. Texture may not display correctly.");
-    } else {
-      // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-      // object3.geometry.attributes.uv.needsUpdate = true;
-    }
+  //     // درخواست رندر مجدد صحنه (اگر نیاز است)
+  //     if (renderer && scene && camera) {
+  //       renderer.render(scene, camera);
+  //     }
+  //   });
+  // }
+  // if (object3) {
+  //   // اعمال متریال به آبجکت
+  //   object3.material = new T.MeshStandardMaterial({ map: video });
+  //   object3.material.map.repeat.set(20, 15);
+  //   object3.material.map.wrapS = 1000;
+  //   object3.material.map.wrapT = 1002;
+  //   // object3.material.needsUpdate = true;
+  //   object3.material.toneMapped = false;
+  //   // بررسی UV mapping
+  //   if (!object3.geometry.attributes.uv) {
+  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
+  //   } else {
+  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
+  //     // object3.geometry.attributes.uv.needsUpdate = true;
+  //   }
 
-    // درخواست رندر مجدد صحنه (اگر نیاز است)
-  }
-  if (object4) {
-    // اعمال متریال به آبجکت
-    object4.material = new T.MeshStandardMaterial({ map: video });
-    object4.material.map.repeat.set(20, 15);
-    object4.material.map.wrapS = 1000;
-    object4.material.map.wrapT = 1002;
-    // object4.material.needsUpdate = true;
-    object4.material.toneMapped = false;
-    // بررسی UV mapping
-    if (!object4.geometry.attributes.uv) {
-      console.warn("No UV mapping found on the object. Texture may not display correctly.");
-    } else {
-      // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-      // object4.geometry.attributes.uv.needsUpdate = true;
-    }
+  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
+  // }
+  // if (object4) {
+  //   // اعمال متریال به آبجکت
+  //   object4.material = new T.MeshStandardMaterial({ map: video });
+  //   object4.material.map.repeat.set(20, 15);
+  //   object4.material.map.wrapS = 1000;
+  //   object4.material.map.wrapT = 1002;
+  //   // object4.material.needsUpdate = true;
+  //   object4.material.toneMapped = false;
+  //   // بررسی UV mapping
+  //   if (!object4.geometry.attributes.uv) {
+  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
+  //   } else {
+  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
+  //     // object4.geometry.attributes.uv.needsUpdate = true;
+  //   }
 
-    // درخواست رندر مجدد صحنه (اگر نیاز است)
-  }
-  if (object5) {
-    // اعمال متریال به آبجکت
-    object5.material = new T.MeshStandardMaterial({ map: video });
-    object5.material.map.repeat.set(20, 15);
-    object5.material.map.wrapS = 1000;
-    object5.material.map.wrapT = 1002;
-    // object5.material.needsUpdate = true;
-    object5.material.toneMapped = false;
-    // بررسی UV mapping
-    if (!object5.geometry.attributes.uv) {
-      console.warn("No UV mapping found on the object. Texture may not display correctly.");
-    } else {
-      // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-      // object5.geometry.attributes.uv.needsUpdate = true;
-    }
+  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
+  // }
+  // if (object5) {
+  //   // اعمال متریال به آبجکت
+  //   object5.material = new T.MeshStandardMaterial({ map: video });
+  //   object5.material.map.repeat.set(20, 15);
+  //   object5.material.map.wrapS = 1000;
+  //   object5.material.map.wrapT = 1002;
+  //   // object5.material.needsUpdate = true;
+  //   object5.material.toneMapped = false;
+  //   // بررسی UV mapping
+  //   if (!object5.geometry.attributes.uv) {
+  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
+  //   } else {
+  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
+  //     // object5.geometry.attributes.uv.needsUpdate = true;
+  //   }
 
-    // درخواست رندر مجدد صحنه (اگر نیاز است)
-  }
-  if (object5) {
-    // اعمال متریال به آبجکت
-    object5.material = new T.MeshStandardMaterial({ map: video });
-    object5.material.map.repeat.set(20, 15);
-    object5.material.map.wrapS = 1000;
-    object5.material.map.wrapT = 1002;
-    // object5.material.needsUpdate = true;
-    object5.material.toneMapped = false;
-    // بررسی UV mapping
-    if (!object5.geometry.attributes.uv) {
-      console.warn("No UV mapping found on the object. Texture may not display correctly.");
-    } else {
-      // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-      // object5.geometry.attributes.uv.needsUpdate = true;
-    }
+  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
+  // }
+  // if (object5) {
+  //   // اعمال متریال به آبجکت
+  //   object5.material = new T.MeshStandardMaterial({ map: video });
+  //   object5.material.map.repeat.set(20, 15);
+  //   object5.material.map.wrapS = 1000;
+  //   object5.material.map.wrapT = 1002;
+  //   // object5.material.needsUpdate = true;
+  //   object5.material.toneMapped = false;
+  //   // بررسی UV mapping
+  //   if (!object5.geometry.attributes.uv) {
+  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
+  //   } else {
+  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
+  //     // object5.geometry.attributes.uv.needsUpdate = true;
+  //   }
 
-    // درخواست رندر مجدد صحنه (اگر نیاز است)
-  }
+  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
+  // }
 
-  loader2.load("./images/Monitor_01.png", function (texture) {
-    texture.wrapS = T.RepeatWrapping;
-    texture.repeat.x = 1;
-    texture.flipY = false;
-    mesh.children[0].children[0].getObjectByName("D11PIV").material.map = texture;
-  })
-  loader2.load("./images/Monitor_011.png", function (texture) {
-    texture.wrapS = T.RepeatWrapping;
-    texture.repeat.x = 1;
-    texture.flipY = false;
-    mesh.children[0].children[0].getObjectByName("D02PIV").material.map = texture;
-  })
+  // loader2.load("./images/Monitor_01.png", function (texture) {
+  //   texture.wrapS = T.RepeatWrapping;
+  //   texture.repeat.x = 1;
+  //   texture.flipY = false;
+  //   mesh.children[0].children[0].getObjectByName("D11PIV").material.map = texture;
+  // })
+  // loader2.load("./images/Monitor_011.png", function (texture) {
+  //   texture.wrapS = T.RepeatWrapping;
+  //   texture.repeat.x = 1;
+  //   texture.flipY = false;
+  //   mesh.children[0].children[0].getObjectByName("D02PIV").material.map = texture;
+  // })
 
-  mesh.children[0].children[0].getObjectByName("M_Dake6PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("D09PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake16PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake15PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake12PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake984PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake991PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake1005PIV").layers.toggle(BLOOM_SCENE)
-  mesh.children[0].children[0].getObjectByName("M_Dake1031PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake6PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("D09PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake16PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake15PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake12PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake984PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake991PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake1005PIV").layers.toggle(BLOOM_SCENE)
+  // mesh.children[0].children[0].getObjectByName("M_Dake1031PIV").layers.toggle(BLOOM_SCENE)
   scene.add(mesh)
-  loading()
 })
 
 loader.setPath("./mars/")
@@ -402,6 +410,40 @@ cube.position.set(13.7, 5, -0.8)
 cube.lookAt(0, 5, -25)
 cube.name = "back"
 scene.add(cube)
+
+const geo5 = new T.BoxGeometry(1, 1.6, 0.15)
+const material4 = new T.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 })
+const cube1 = new T.Mesh(geo5, material4)
+const cube2 = new T.Mesh(geo5, material4)
+const cube3 = new T.Mesh(geo5, material4)
+const cube4 = new T.Mesh(geo5, material4)
+const cube5 = new T.Mesh(geo5, material4)
+const cube6 = new T.Mesh(geo5, material4)
+cube1.position.set(13.06, 8.2, -0.7)
+cube1.rotation.y = 0.6
+cube1.name = "veggie"
+cube2.position.set(14, 8.2, -1.3)
+cube2.rotation.y = 0.6
+cube2.name = "sausage"
+cube3.position.set(14.92, 8.2, -2.1)
+cube3.rotation.y = 0.6
+cube3.name = "chickenBBQ"
+cube4.position.set(13.06, 6.39, -0.7)
+cube4.rotation.y = 0.6
+cube4.name = "beef"
+cube5.position.set(14, 6.39, -1.3)
+cube5.rotation.y = 0.6
+cube5.name = "yogu"
+cube6.position.set(14.95, 6.37, -2.1)
+cube6.rotation.y = 0.6
+cube6.name = "fajitas"
+
+scene.add(cube1)
+scene.add(cube2)
+scene.add(cube3)
+scene.add(cube4)
+scene.add(cube5)
+scene.add(cube6)
 
 const BLOOM_SCENE = 1;
 const bloomLayer = new T.Layers();
@@ -562,7 +604,7 @@ function onMouseDown(event) {
   let intersections = raycaster.intersectObjects(scene.children, true);
   if (intersections.length > 0) {
     console.log(intersections[0].object);
-    if (intersections[0].object.name == "foodsPIV") {
+    if (intersections[0].object.name == "M_Dake6721PIV") {
       click.play()
       whoosh.play()
       gsap.to(camera.position, {
@@ -725,9 +767,64 @@ function onMouseDown(event) {
         });
       });
 
-
       controls.enabled = true;
       isOpen = false;
+    }
+    function handleImgs(src) {
+      for (let i = 0; i < document.getElementById("imgFrame").children.length; i++) {
+        document.getElementById("imgFrame").children.item(i).classList.add("hidden")
+        if (document.getElementById("imgFrame").children.item(i).getAttribute("src") == src) {
+          document.getElementById("imgFrame").children.item(i).classList.remove("hidden")
+        }
+      }
+    }
+    if (intersections[0].object.name == "veggie") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/veggie_delight.png")
+    }
+    if (intersections[0].object.name == "sausage") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/sausage.png")
+    }
+    if (intersections[0].object.name == "chickenBBQ") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/bbq_chicken.png")
+    }
+    if (intersections[0].object.name == "beef") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/steak.png")
+    }
+    if (intersections[0].object.name == "yogu") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/beetroot_yogurt.png")
+    }
+    if (intersections[0].object.name == "fajitas") {
+      click.play()
+      console.log("faasd");
+      document.querySelector("#cover").classList.remove("hidden")
+      document.querySelector("#wrapper2").classList.remove("invisible")
+      document.querySelector("#wrapper2").classList.remove("pointer-events-none")
+      handleImgs("/images/chicken_fajita.png")
     }
   }
   camera.updateProjectionMatrix()
@@ -741,11 +838,6 @@ function onMouseDown(event) {
 // maskPass2.enabled = true;
 // bloomComposer.render();
 
-document.getElementById("loadingScreen").classList.add("z-[20]");
-document.getElementById("loadingScreen").innerHTML = `<img src="images/loading.gif" class="w-auto h-[200px]">`
-function loading() {
-  document.getElementById("loadingScreen").classList.add("hidden")
-}
 
 window.removePopup = () => {
   document.getElementById("cover").classList.add("hidden")
@@ -803,7 +895,7 @@ function addStars() {
   scene.add(starsMesh);
 }
 
-Array(1200).fill().forEach(addStars)
+// Array(1200).fill().forEach(addStars)
 
 scene.traverseVisible(obj => {
   if (obj.name == "rain") {
@@ -811,6 +903,13 @@ scene.traverseVisible(obj => {
     obj.position.y = 60 + y
   }
 })
+
+window.removeImgFrames = () =>{
+  click.play()
+  document.getElementById("cover").classList.add("hidden")
+  document.getElementById("wrapper2").classList.add("invisible")
+  document.getElementById("wrapper2").classList.add("pointer-events-none")
+}
 
 
 function animate() {
