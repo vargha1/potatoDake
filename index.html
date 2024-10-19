@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaFactory</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="vertex" id="vertexshader">
+
+    			varying vec2 vUv;
+    
+    			void main() {
+    
+    				vUv = uv;
+    
+    				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    
+    			}
+    
+    </script>
+  <script type="fragment" id="fragmentshader">
+
+    			uniform sampler2D baseTexture;
+    			uniform sampler2D bloomTexture;
+    
+    			varying vec2 vUv;
+    
+    			void main() {
+    
+    				gl_FragColor = (texture2D(baseTexture, vUv) + vec4(1.0) * texture2D(bloomTexture, vUv));
+    
+    			}
+    
+    </script>
+</head>
+
+<body class="flex flex-col items-center w-full bg-[#1d1f39]">
+  <section class="flex w-full" id="canvasHolder">
+
+  </section>
+  <div class="flex absolute inset-0 bg-[#1d1f39] justify-center items-center" id="loadingScreen"></div>
+  <div class="flex relative h-[100dvh] bg-[#1d1f39] z-[5]" id="startSection">
+    <h1 class="text-[40px] text-white hover:text-violet-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      onclick="start()">
+      Start</h1>
+  </div>
+  <div id="cover" class="absolute inset-0 bg-black opacity-40 z-[21] hidden"></div>
+  <div class="flex absolute h-[100dvh] items-center md:mx-[20%] hidden" id="wrapper">
+    <div
+      class="flex md:flex-row flex-col relative bg-white z-[26] opacity-0 h-fit rounded-[20px] flex-wrap transition-all duration-300 -mt-[100%] invisible"
+      id="popframe">
+      <div class="flex flex-col md:w-1/2 w-full px-5 py-1 h-full">
+        <h3 class="text-[14px]">Get in Touch with PotatoHut</h3>
+        <p class="md:my-5 my-2 md:text-[16px] text-[10px] md:w-[80%]">We would love to hear from you! If you
+          have any
+          questions,
+          collaboration
+          opportunities, or
+          simply want to
+          learn more
+          about Potato Hut LTD and our projects, feel free to reach out to us.</p>
+        <p class="md:mb-5 mb-2 md:text-[16px] text-[10px] md:w-[80%]">Our team is here to provide you with all
+          the
+          information
+          you
+          need.
+          Connect with
+          us through the provided contact
+          information or use the contact form to send us a message. We look forward to connecting with you and
+          exploring the
+          possibilities together.</p>
+        <a href="mailto:info@potatohut.com" class="text-yellow-400 mb-2">info@potatohut.com</a>
+        <p class="md:mb-5 mb-2 md:text-[16px] text-[10px] md:w-[80%]">Head office: MENA Region: No. 607 & 608
+          City
+          Avenue
+          Building
+          8th St,
+          Opposite Deira City Center, P.O.Box: 13132 Dubai,
+          United Arab Emirates, Telephone No. +971 50 658 0990</p>
+        <p class="md:mb-5 mb-2 md:text-[16px] text-[10px] md:w-[80%]">UK & Europe: Perfect Link International,
+          Suite
+          304,
+          Solar
+          House, 915
+          High Rd, London N12 8QJ. Mobile: +44 (0) 7407722225</p>
+      </div>
+      <form action="post" class="flex flex-col px-5 py-1 justify-center md:text-[16px] text-[10px] md:w-1/2 w-full">
+        <label class="py-2 ms-3 md:ms-5" for="name">Name</label>
+        <input type="text" name="name" class="px-2 py-1 border-zinc-500 border-2 rounded-[5px] text-black" id="name">
+        <label class="py-2 ms-3 md:ms-5" for="email">Email</label>
+        <input type="email" name="email" class="px-2 py-1 border-zinc-500 border-2 rounded-[5px] text-black" id="email">
+        <label class="py-2 ms-3 md:ms-5" for="subject">Subject</label>
+        <input type="text" name="subject" class="px-2 py-1 border-zinc-500 border-2 rounded-[5px] text-black"
+          id="subject">
+        <label class="py-2 ms-3 md:ms-5" for="message">Message</label>
+        <textarea name="message" class="px-2 py-3 border-zinc-500 border-2 rounded-[5px] text-black"
+          id="message"></textarea>
+        <button type="submit" class="w-1/6 text-black border-2 border-black bg-white mt-4">Send</button>
+      </form>
+      <div class="flex absolute top-0 right-1" onclick="removePopup()">
+        <svg height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-13 -13 52.00 52.00" xml:space="preserve" fill="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <g>
+              <path style="fill:#030104;"
+                d="M21.125,0H4.875C2.182,0,0,2.182,0,4.875v16.25C0,23.818,2.182,26,4.875,26h16.25 C23.818,26,26,23.818,26,21.125V4.875C26,2.182,23.818,0,21.125,0z M18.78,17.394l-1.388,1.387c-0.254,0.255-0.67,0.255-0.924,0 L13,15.313L9.533,18.78c-0.255,0.255-0.67,0.255-0.925-0.002L7.22,17.394c-0.253-0.256-0.253-0.669,0-0.926l3.468-3.467 L7.221,9.534c-0.254-0.256-0.254-0.672,0-0.925l1.388-1.388c0.255-0.257,0.671-0.257,0.925,0L13,10.689l3.468-3.468 c0.255-0.257,0.671-0.257,0.924,0l1.388,1.386c0.254,0.255,0.254,0.671,0.001,0.927l-3.468,3.467l3.468,3.467 C19.033,16.725,19.033,17.138,18.78,17.394z">
+              </path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <video src="./videos/TV.mp4" class="hidden" id="video" muted loop autoplay></video>
+  <audio loop autoplay id="audio" volume="0.5"></audio>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

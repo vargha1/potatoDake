@@ -1,0 +1,11 @@
+{
+	"dake01": {
+		"version": 1,
+		"id": "dake01",
+		"name": "0",
+		"kind": "Puppeteer",
+		"mood": null,
+		"postPlaybackMood": null,
+		"duration": 4.125
+	}
+}
