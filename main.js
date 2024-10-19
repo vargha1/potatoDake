@@ -57,63 +57,6 @@ const renderer = new T.WebGLRenderer({ antialias: true, alpha: true });
 // const renderer2 = new CSS2DRenderer();
 // renderer2.domElement.style.position = "absolute";
 // renderer2.domElement.style.top = "0px";
-const div = document.createElement('div')
-div.style
-//TODO: Fix the popup problem
-div.innerHTML = `
-  <div class="flex absolute inset-[20%] bg-white z-[22] opacity-0" id="popframe">
-        <div class="flex flex-col w-1/2 p-5">
-            <h3 class="text-[13px]">Get in Touch with PotatoHut</h3>
-            <p class="my-5 text-[11px] w-[80%]">We would love to hear from you! If you have any questions, collaboration
-                opportunities, or
-                simply want to
-                learn more
-                about Potato Hut LTD and our projects, feel free to reach out to us.</p>
-            <p class="mb-5 text-[11px] w-[80%]">Our team is here to provide you with all the information you need.
-                Connect with
-                us through the provided contact
-                information or use the contact form to send us a message. We look forward to connecting with you and
-                exploring the
-                possibilities together.</p>
-            <a href="mailto:info@potatohut.com" class="text-yellow-400 text-[13px] mb-5">info@potatohut.com</a>
-            <p class="mb-5 text-[11px] w-[80%]">Head office: MENA Region: No. 607 & 608 City Avenue Building 8th St,
-                Opposite Deira City Center, P.O.Box: 13132 Dubai,
-                United Arab Emirates, Telephone No. +971 50 658 0990</p>
-            <p class="mb-5 text-[11px] w-[80%]">UK & Europe: Perfect Link International, Suite 304, Solar House, 915
-                High Rd, London N12 8QJ. Mobile: +44 (0) 7407722225</p>
-        </div>
-        <form action="post" class="flex flex-col mt-8 px-5 text-[15px] w-1/2">
-            <label class="py-2 ms-5" for="name">Name</label>
-            <input type="text" name="name" class="px-2 py-1 border-zinc-500 border-2 text-black" id="name">
-            <label class="py-2 ms-5" for="email">Email</label>
-            <input type="email" name="email" class="px-2 py-1 border-zinc-500 border-2 text-black" id="email">
-            <label class="py-2 ms-5" for="subject">Subject</label>
-            <input type="text" name="subject" class="px-2 py-1 border-zinc-500 border-2 text-black" id="subject">
-            <label class="py-2 ms-5" for="message">Message</label>
-            <textarea name="message" class="px-2 py-1 border-zinc-500 border-2 text-black" id="message"></textarea>
-            <button type="submit" class="w-1/6 text-black bg-white mt-4">Send</button>
-        </form>
-    </div>
-`
-// div.innerHTML = `<div class=""></div>`
-const css2DObject = new CSS2DObject(div)
-// const css3DObject2 = new CSS3DObject(blackDiv)
-// css3DObject.scale.set(0.00470, 0.00505, 1)
-// css3DObject.position.set(-8, 26.25, -3.7)
-// css3DObject.lookAt(-172, 16.3, 0)
-// css3DObject.updateMatrixWorld()
-// css3DObject2.scale.set(0.00470, 0.00505, 1)
-// css3DObject2.position.set(-7.7, 26.25, -3.7)
-// css3DObject2.lookAt(-172, 16.3, 0)
-// css3DObject2.updateMatrixWorld()
-// if (detectDeviceType() == "Mobile") {
-//   div.style.width = "2060px"
-//   div.style.height = "800px"
-//   blackDiv.style.width = "2060px"
-//   blackDiv.style.height = "800px"
-//   css3DObject.position.set(-8, 26.25, -1)
-//   css3DObject.position.set(-7.7, 26.25, -1)
-// }
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
@@ -141,6 +84,20 @@ textMesh2.name = "back3"
 textMesh2.position.set(-7, 1.4, -10)
 textMesh2.lookAt(-20.3, 1.4, -18)
 scene.add(textMesh2)
+
+const textGeometry3 = new TextGeometry('Potato Hut', {
+  font: font2,
+  size: 1.5,
+  depth: 0.5,
+});
+
+textGeometry3.computeBoundingBox();
+const textMat3 = new T.MeshStandardMaterial({ color: 0xffff00 })
+const textMesh3 = new T.Mesh(textGeometry3, textMat3)
+textMesh3.name = "PotatoHut"
+textMesh3.position.set(-7, 1.4, -10)
+textMesh3.lookAt(-20.3, 1.4, -18)
+scene.add(textMesh3)
 
 camera.position.set(-35, 45, -60)
 
@@ -239,27 +196,36 @@ loader.load("dake01.gltf", function VR(gltf) {
   // ]
   // console.log(object1);
 
-  // const geo5 = object1.geometry;
-  // const posAtr = geo5.attributes.position;
-  // const positions = posAtr.array; // Directly access the array
-  // const vertices = [];
+  const geo5 = mesh.children[0].children[0].getObjectByName("M_Dake6713PIV").geometry;
+  const posAtr = geo5.attributes.position;
+  const positions = posAtr.array; // Directly access the array
+  const vertices = [];
 
-  // for (let i = 0; i < posAtr.count; i++) {
-  //   vertices.push({
-  //     x: posAtr.getX(i),
-  //     y: posAtr.getY(i),
-  //     z: posAtr.getZ(i)
-  //   });
-  // }
+  for (let i = 0; i < posAtr.count; i++) {
+    vertices.push({
+      x: posAtr.getX(i),
+      y: posAtr.getY(i),
+      z: posAtr.getZ(i)
+    });
+  }
 
-  // const pointGeometry = new T.BufferGeometry();
-  // pointGeometry.setAttribute('position', new T.Float32BufferAttribute(positions, 3));
-  // const pointMaterial = new T.PointsMaterial({ color: 0x00ffff, size: 0.05 });
-  // const points = new T.Points(pointGeometry, pointMaterial);
-  // points.position.set(3.2, 6, -11.7)
-  // points.layers.toggle(BLOOM_SCENE)
-  // points.name = "points"
-  // scene.add(points);
+  const pointGeometry = new T.BufferGeometry();
+  pointGeometry.setAttribute('position', new T.Float32BufferAttribute(positions, 3));
+  const pointMaterial = new T.PointsMaterial({ color: 0xffff00, size: 0.05 });
+  const points = new T.Points(pointGeometry, pointMaterial);
+  points.position.set(0, 25, 0)
+  points.layers.toggle(BLOOM_SCENE)
+  points.name = "points"
+
+  pointGeometry.computeBoundingBox();
+  let boundingBox = pointGeometry.boundingBox;
+  let center = new T.Vector3(0, 25, 0);
+  boundingBox.getCenter(center);
+
+  // Center the pointGeometry around the origin
+  pointGeometry.translate(-center.x, -center.y, -center.z);
+
+  scene.add(points);
 
   // if (object2) {
   //   new TextureLoader().load("images/BSOD.png", (texture) => {
@@ -603,6 +569,7 @@ function onMouseDown(event) {
 
   let intersections = raycaster.intersectObjects(scene.children, true);
   if (intersections.length > 0) {
+    intersections[0].object.layers.toggle(BLOOM_SCENE)
     console.log(intersections[0].object);
     if (intersections[0].object.name == "M_Dake6721PIV") {
       click.play()
@@ -904,7 +871,7 @@ scene.traverseVisible(obj => {
   }
 })
 
-window.removeImgFrames = () =>{
+window.removeImgFrames = () => {
   click.play()
   document.getElementById("cover").classList.add("hidden")
   document.getElementById("wrapper2").classList.add("invisible")
@@ -919,29 +886,11 @@ function animate() {
   // const spin = scene.children[scene.children.length - 1].children[0].getObjectByName("SA_Obj29PIV")
   // spin.rotateOnAxis(new T.Vector3(1,0,0) , 1)
   controls.update()
-  // renderer2.render(scene, camera)
-  // camera.layers.set(0);
-  // baseComposer.render();
-
-  // // Render bloom only for the objects on layer 1
-  // camera.layers.set(1);
-  // bloomComposer.render();
-  // camera.layers.set(0); // Reset to render all layers
-
-  // // Combine the base scene and the bloom
-  // finalComposer.passes[0].uniforms.baseTexture.value = baseComposer.renderTarget2.texture;
-  // renderer.setRenderTarget(null);
-  // renderer.clear();
-  // finalComposer.render();
-
-  // renderer.render(scene, camera)
-  // renderer2.render(scene2, camera)
-
-  // renderer.setRenderTarget(composer.renderTarget2);
-  // renderer.render(bloomScene, camera);
-  // renderer.setRenderTarget(null);
-
-  // composer.render()
+  scene.children.forEach(element => {
+    if(element.name == "points"){
+      element.rotation.y+=0.01
+    }
+  })
 
   scene.traverse(darkenNonBloomed);
 
