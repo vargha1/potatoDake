@@ -1,7 +1,7 @@
 {
     "asset": {
         "copyright": "(C)2024 ALMT66",
-        "generator": "maya2glTF main fbbc95e5dc4d",
+        "generator": "maya2glTF v1.5.2 fc60fee",
         "version": "2.0"
     },
     "scenes": [
@@ -27,40 +27,46 @@
         {
             "name": "group1:PIV",
             "children": [
-                119,
-                117,
-                115,
+                131,
+                129,
+                127,
+                126,
+                124,
+                122,
+                120,
+                118,
+                116,
                 114,
                 112,
                 110,
                 108,
+                107,
                 106,
                 104,
                 102,
                 100,
                 98,
-                96,
+                97,
                 95,
-                94,
-                92,
+                93,
+                91,
                 90,
                 88,
                 86,
-                85,
-                83,
-                81,
-                79,
+                84,
+                82,
+                80,
                 78,
                 76,
                 74,
                 72,
                 70,
-                68,
-                66,
-                64,
-                62,
-                60,
-                58,
+                69,
+                67,
+                65,
+                63,
+                61,
+                59,
                 57,
                 55,
                 53,
@@ -68,17 +74,11 @@
                 49,
                 47,
                 45,
-                43,
-                41,
-                39,
-                37,
-                35,
-                33,
-                32,
-                30,
-                28,
-                26,
-                24,
+                44,
+                42,
+                40,
+                38,
+                36,
                 22,
                 20,
                 18,
@@ -288,7 +288,14 @@
         },
         {
             "name": "M_Dake6721:PIV",
-            "mesh": 12,
+            "children": [
+                34,
+                32,
+                30,
+                28,
+                26,
+                24
+            ],
             "translation": [
                 16.026458740234376,
                 -8.794425010681153,
@@ -296,9 +303,129 @@
             ]
         },
         {
-            "name": "M_Dake6720",
+            "name": "polySurface109",
             "children": [
                 25
+            ],
+            "translation": [
+                -16.14714813232422,
+                2.981191635131836,
+                20.251455307006837
+            ]
+        },
+        {
+            "name": "polySurface109:PIV",
+            "mesh": 12,
+            "translation": [
+                16.14714813232422,
+                -2.981191635131836,
+                -20.251455307006837
+            ]
+        },
+        {
+            "name": "polySurface108",
+            "children": [
+                27
+            ],
+            "translation": [
+                -16.581544876098634,
+                4.870891571044922,
+                20.259286880493165
+            ]
+        },
+        {
+            "name": "polySurface108:PIV",
+            "mesh": 13,
+            "translation": [
+                16.581544876098634,
+                -4.870891571044922,
+                -20.259286880493165
+            ]
+        },
+        {
+            "name": "polySurface107",
+            "children": [
+                29
+            ],
+            "translation": [
+                -16.043109893798829,
+                7.392293930053711,
+                20.231380462646489
+            ]
+        },
+        {
+            "name": "polySurface107:PIV",
+            "mesh": 14,
+            "translation": [
+                16.043109893798829,
+                -7.392293930053711,
+                -20.231380462646489
+            ]
+        },
+        {
+            "name": "polySurface106",
+            "children": [
+                31
+            ],
+            "translation": [
+                -15.003318786621094,
+                11.01189422607422,
+                20.18250274658203
+            ]
+        },
+        {
+            "name": "polySurface106:PIV",
+            "mesh": 15,
+            "translation": [
+                15.003318786621094,
+                -11.01189422607422,
+                -20.18250274658203
+            ]
+        },
+        {
+            "name": "polySurface105",
+            "children": [
+                33
+            ],
+            "translation": [
+                -16.026458740234376,
+                14.253273963928225,
+                20.26946258544922
+            ]
+        },
+        {
+            "name": "polySurface105:PIV",
+            "mesh": 16,
+            "translation": [
+                16.026458740234376,
+                -14.253273963928225,
+                -20.26946258544922
+            ]
+        },
+        {
+            "name": "polySurface104",
+            "children": [
+                35
+            ],
+            "translation": [
+                -15.003318786621094,
+                11.36029052734375,
+                20.18238067626953
+            ]
+        },
+        {
+            "name": "polySurface104:PIV",
+            "mesh": 17,
+            "translation": [
+                15.003318786621094,
+                -11.36029052734375,
+                -20.18238067626953
+            ]
+        },
+        {
+            "name": "M_Dake6720",
+            "children": [
+                37
             ],
             "translation": [
                 0.1794009804725647,
@@ -319,7 +446,7 @@
         },
         {
             "name": "M_Dake6720:PIV",
-            "mesh": 13,
+            "mesh": 18,
             "translation": [
                 56.43254089355469,
                 -9.086762428283692,
@@ -329,7 +456,7 @@
         {
             "name": "M_Dake6719",
             "children": [
-                27
+                39
             ],
             "translation": [
                 -0.8210902214050293,
@@ -339,7 +466,7 @@
         },
         {
             "name": "M_Dake6719:PIV",
-            "mesh": 14,
+            "mesh": 19,
             "translation": [
                 0.8210902214050293,
                 -10.874771118164065,
@@ -349,7 +476,7 @@
         {
             "name": "M_Dake6718",
             "children": [
-                29
+                41
             ],
             "translation": [
                 -16.293249130249025,
@@ -359,7 +486,7 @@
         },
         {
             "name": "M_Dake6718:PIV",
-            "mesh": 15,
+            "mesh": 20,
             "translation": [
                 16.293249130249025,
                 -20.626562118530278,
@@ -369,7 +496,7 @@
         {
             "name": "M_Dake6717",
             "children": [
-                31
+                43
             ],
             "translation": [
                 0.0,
@@ -379,7 +506,7 @@
         },
         {
             "name": "M_Dake6717:PIV",
-            "mesh": 16,
+            "mesh": 21,
             "translation": [
                 0.0,
                 -4.752533912658691,
@@ -388,12 +515,12 @@
         },
         {
             "name": "M_Dake6716",
-            "mesh": 17
+            "mesh": 22
         },
         {
             "name": "M_Dake6715",
             "children": [
-                34
+                46
             ],
             "translation": [
                 14.136302947998049,
@@ -409,7 +536,7 @@
         },
         {
             "name": "M_Dake6715:PIV",
-            "mesh": 18,
+            "mesh": 23,
             "translation": [
                 -14.136302947998049,
                 -1.5173981189727784,
@@ -419,7 +546,7 @@
         {
             "name": "M_Dake6714",
             "children": [
-                36
+                48
             ],
             "translation": [
                 -0.762935996055603,
@@ -429,7 +556,7 @@
         },
         {
             "name": "M_Dake6714:PIV",
-            "mesh": 19,
+            "mesh": 24,
             "translation": [
                 0.762935996055603,
                 -4.941709041595459,
@@ -439,7 +566,7 @@
         {
             "name": "M_Dake6713",
             "children": [
-                38
+                50
             ],
             "translation": [
                 -4.6774187088012699,
@@ -449,7 +576,7 @@
         },
         {
             "name": "M_Dake6713:PIV",
-            "mesh": 20,
+            "mesh": 25,
             "translation": [
                 4.6774187088012699,
                 -18.93315887451172,
@@ -459,7 +586,7 @@
         {
             "name": "M_Dake6712",
             "children": [
-                40
+                52
             ],
             "translation": [
                 0.02729034423828125,
@@ -469,7 +596,7 @@
         },
         {
             "name": "M_Dake6712:PIV",
-            "mesh": 21,
+            "mesh": 26,
             "translation": [
                 -0.02729034423828125,
                 -6.553024291992188,
@@ -479,7 +606,7 @@
         {
             "name": "M_Dake6711",
             "children": [
-                42
+                54
             ],
             "translation": [
                 8.121511459350586,
@@ -500,7 +627,7 @@
         },
         {
             "name": "M_Dake6711:PIV",
-            "mesh": 22,
+            "mesh": 27,
             "translation": [
                 209.16226196289066,
                 -377.7193603515625,
@@ -510,7 +637,7 @@
         {
             "name": "M_Dake6710",
             "children": [
-                44
+                56
             ],
             "translation": [
                 -2.3799999837592626e-7,
@@ -520,7 +647,7 @@
         },
         {
             "name": "M_Dake6710:PIV",
-            "mesh": 23,
+            "mesh": 28,
             "translation": [
                 2.3799999837592626e-7,
                 -2.0627145767211916,
@@ -530,7 +657,7 @@
         {
             "name": "M_Dake6709",
             "children": [
-                46
+                58
             ],
             "translation": [
                 7.903564453125,
@@ -540,7 +667,7 @@
         },
         {
             "name": "M_Dake6709:PIV",
-            "mesh": 24,
+            "mesh": 29,
             "translation": [
                 -7.903564453125,
                 -1.627840518951416,
@@ -550,7 +677,7 @@
         {
             "name": "M_Dake6708",
             "children": [
-                48
+                60
             ],
             "translation": [
                 -8.857333183288575,
@@ -571,7 +698,7 @@
         },
         {
             "name": "M_Dake6708:PIV",
-            "mesh": 25,
+            "mesh": 30,
             "translation": [
                 8.415253639221192,
                 -5.118011474609375,
@@ -581,7 +708,7 @@
         {
             "name": "M_Dake6707",
             "children": [
-                50
+                62
             ],
             "translation": [
                 0.1794009804725647,
@@ -602,7 +729,7 @@
         },
         {
             "name": "M_Dake6707:PIV",
-            "mesh": 26,
+            "mesh": 31,
             "translation": [
                 56.43254089355469,
                 -3.606603384017945,
@@ -612,7 +739,7 @@
         {
             "name": "M_Dake6706",
             "children": [
-                52
+                64
             ],
             "translation": [
                 0.05902910232543945,
@@ -622,7 +749,7 @@
         },
         {
             "name": "M_Dake6706:PIV",
-            "mesh": 27,
+            "mesh": 32,
             "translation": [
                 -0.05902910232543945,
                 -5.967801094055176,
@@ -632,7 +759,7 @@
         {
             "name": "M_Dake6705",
             "children": [
-                54
+                66
             ],
             "translation": [
                 0.0,
@@ -642,7 +769,7 @@
         },
         {
             "name": "M_Dake6705:PIV",
-            "mesh": 28,
+            "mesh": 33,
             "translation": [
                 0.0,
                 -12.62650775909424,
@@ -652,7 +779,7 @@
         {
             "name": "M_Dake6704",
             "children": [
-                56
+                68
             ],
             "translation": [
                 -7.9656982421875,
@@ -662,7 +789,7 @@
         },
         {
             "name": "M_Dake6704:PIV",
-            "mesh": 29,
+            "mesh": 34,
             "translation": [
                 7.9656982421875,
                 -32.0098876953125,
@@ -671,12 +798,12 @@
         },
         {
             "name": "M_Dake6703",
-            "mesh": 30
+            "mesh": 35
         },
         {
             "name": "M_Dake6702",
             "children": [
-                59
+                71
             ],
             "translation": [
                 -7.879058361053467,
@@ -686,7 +813,7 @@
         },
         {
             "name": "M_Dake6702:PIV",
-            "mesh": 31,
+            "mesh": 36,
             "translation": [
                 7.879058361053467,
                 -27.91583251953125,
@@ -696,7 +823,7 @@
         {
             "name": "M_Dake6701",
             "children": [
-                61
+                73
             ],
             "translation": [
                 -8.6658935546875,
@@ -706,7 +833,7 @@
         },
         {
             "name": "M_Dake6701:PIV",
-            "mesh": 32,
+            "mesh": 37,
             "translation": [
                 8.6658935546875,
                 -19.228424072265626,
@@ -716,7 +843,7 @@
         {
             "name": "M_Dake6700",
             "children": [
-                63
+                75
             ],
             "translation": [
                 -7.879058361053467,
@@ -726,7 +853,7 @@
         },
         {
             "name": "M_Dake6700:PIV",
-            "mesh": 33,
+            "mesh": 38,
             "translation": [
                 7.879058361053467,
                 -27.91583251953125,
@@ -736,7 +863,7 @@
         {
             "name": "M_Dake6699",
             "children": [
-                65
+                77
             ],
             "translation": [
                 -7.938018798828125,
@@ -746,7 +873,7 @@
         },
         {
             "name": "M_Dake6699:PIV",
-            "mesh": 34,
+            "mesh": 39,
             "translation": [
                 7.938018798828125,
                 -30.578216552734376,
@@ -756,7 +883,7 @@
         {
             "name": "M_Dake6698",
             "children": [
-                67
+                79
             ],
             "translation": [
                 -7.538604736328125,
@@ -766,7 +893,7 @@
         },
         {
             "name": "M_Dake6698:PIV",
-            "mesh": 35,
+            "mesh": 40,
             "translation": [
                 7.538604736328125,
                 -20.734664916992189,
@@ -776,7 +903,7 @@
         {
             "name": "M_Dake6697",
             "children": [
-                69
+                81
             ],
             "translation": [
                 -8.73687744140625,
@@ -786,7 +913,7 @@
         },
         {
             "name": "M_Dake6697:PIV",
-            "mesh": 36,
+            "mesh": 41,
             "translation": [
                 8.73687744140625,
                 -21.327789306640626,
@@ -796,7 +923,7 @@
         {
             "name": "M_Dake6696",
             "children": [
-                71
+                83
             ],
             "translation": [
                 -7.663726329803467,
@@ -806,7 +933,7 @@
         },
         {
             "name": "M_Dake6696:PIV",
-            "mesh": 37,
+            "mesh": 42,
             "translation": [
                 7.663726329803467,
                 -25.26544189453125,
@@ -816,7 +943,7 @@
         {
             "name": "M_Dake6695",
             "children": [
-                73
+                85
             ],
             "translation": [
                 -8.019805908203125,
@@ -826,7 +953,7 @@
         },
         {
             "name": "M_Dake6695:PIV",
-            "mesh": 38,
+            "mesh": 43,
             "translation": [
                 8.019805908203125,
                 -34.515869140625,
@@ -836,7 +963,7 @@
         {
             "name": "M_Dake6694",
             "children": [
-                75
+                87
             ],
             "translation": [
                 -8.6658935546875,
@@ -846,7 +973,7 @@
         },
         {
             "name": "M_Dake6694:PIV",
-            "mesh": 39,
+            "mesh": 44,
             "translation": [
                 8.6658935546875,
                 -19.228424072265626,
@@ -856,7 +983,7 @@
         {
             "name": "M_Dake6693",
             "children": [
-                77
+                89
             ],
             "translation": [
                 -7.538604736328125,
@@ -866,7 +993,7 @@
         },
         {
             "name": "M_Dake6693:PIV",
-            "mesh": 40,
+            "mesh": 45,
             "translation": [
                 7.538604736328125,
                 -20.734664916992189,
@@ -875,12 +1002,12 @@
         },
         {
             "name": "M_Dake6692",
-            "mesh": 41
+            "mesh": 46
         },
         {
             "name": "M_Dake6691",
             "children": [
-                80
+                92
             ],
             "translation": [
                 0.005276917945593596,
@@ -890,7 +1017,7 @@
         },
         {
             "name": "M_Dake6691:PIV",
-            "mesh": 42,
+            "mesh": 47,
             "translation": [
                 -0.005276917945593596,
                 -2.5354177951812746,
@@ -900,7 +1027,7 @@
         {
             "name": "M_Dake6690",
             "children": [
-                82
+                94
             ],
             "translation": [
                 -0.04098035767674446,
@@ -910,7 +1037,7 @@
         },
         {
             "name": "M_Dake6690:PIV",
-            "mesh": 43,
+            "mesh": 48,
             "translation": [
                 0.04098035767674446,
                 -5.614133358001709,
@@ -920,7 +1047,7 @@
         {
             "name": "M_Dake6689",
             "children": [
-                84
+                96
             ],
             "translation": [
                 -8.45911693572998,
@@ -941,7 +1068,7 @@
         },
         {
             "name": "M_Dake6689:PIV",
-            "mesh": 44,
+            "mesh": 49,
             "translation": [
                 8.415253639221192,
                 -5.118011474609375,
@@ -950,12 +1077,12 @@
         },
         {
             "name": "M_Dake6688",
-            "mesh": 45
+            "mesh": 50
         },
         {
             "name": "M_Dake6687",
             "children": [
-                87
+                99
             ],
             "translation": [
                 -16.280288696289064,
@@ -965,7 +1092,7 @@
         },
         {
             "name": "M_Dake6687:PIV",
-            "mesh": 46,
+            "mesh": 51,
             "translation": [
                 16.280288696289064,
                 -15.666894912719729,
@@ -975,7 +1102,7 @@
         {
             "name": "M_Dake6686",
             "children": [
-                89
+                101
             ],
             "translation": [
                 8.12151050567627,
@@ -996,7 +1123,7 @@
         },
         {
             "name": "M_Dake6686:PIV",
-            "mesh": 47,
+            "mesh": 52,
             "translation": [
                 188.64524841308598,
                 -408.90911865234377,
@@ -1006,7 +1133,7 @@
         {
             "name": "M_Dake6685",
             "children": [
-                91
+                103
             ],
             "translation": [
                 0.0,
@@ -1016,7 +1143,7 @@
         },
         {
             "name": "M_Dake6685:PIV",
-            "mesh": 48,
+            "mesh": 53,
             "translation": [
                 0.0,
                 -6.202001571655273,
@@ -1026,7 +1153,7 @@
         {
             "name": "M_Dake6684",
             "children": [
-                93
+                105
             ],
             "translation": [
                 0.0,
@@ -1036,7 +1163,7 @@
         },
         {
             "name": "M_Dake6684:PIV",
-            "mesh": 49,
+            "mesh": 54,
             "translation": [
                 0.0,
                 -6.432705402374268,
@@ -1045,11 +1172,11 @@
         },
         {
             "name": "M_Dake6683",
-            "mesh": 50
+            "mesh": 55
         },
         {
             "name": "M_Dake6682",
-            "mesh": 51,
+            "mesh": 56,
             "translation": [
                 0.0,
                 -0.8933620452880859,
@@ -1059,7 +1186,7 @@
         {
             "name": "M_Dake6681",
             "children": [
-                97
+                109
             ],
             "translation": [
                 2.012352466583252,
@@ -1069,7 +1196,7 @@
         },
         {
             "name": "M_Dake6681:PIV",
-            "mesh": 52,
+            "mesh": 57,
             "translation": [
                 -2.012352466583252,
                 -18.25052070617676,
@@ -1079,7 +1206,7 @@
         {
             "name": "M_Dake6680",
             "children": [
-                99
+                111
             ],
             "translation": [
                 4.162849426269531,
@@ -1089,7 +1216,7 @@
         },
         {
             "name": "M_Dake6680:PIV",
-            "mesh": 53,
+            "mesh": 58,
             "translation": [
                 -4.162849426269531,
                 -11.808059692382813,
@@ -1099,7 +1226,7 @@
         {
             "name": "M_Dake6679",
             "children": [
-                101
+                113
             ],
             "translation": [
                 -7.005226135253906,
@@ -1120,7 +1247,7 @@
         },
         {
             "name": "M_Dake6679:PIV",
-            "mesh": 54,
+            "mesh": 59,
             "translation": [
                 6.982396602630615,
                 -3.72003173828125,
@@ -1130,7 +1257,7 @@
         {
             "name": "M_Dake6677",
             "children": [
-                103
+                115
             ],
             "translation": [
                 -16.27675437927246,
@@ -1140,7 +1267,7 @@
         },
         {
             "name": "M_Dake6677:PIV",
-            "mesh": 55,
+            "mesh": 60,
             "translation": [
                 16.27675437927246,
                 -18.78960227966309,
@@ -1150,7 +1277,7 @@
         {
             "name": "M_Dake6676",
             "children": [
-                105
+                117
             ],
             "translation": [
                 1.9589661359786988,
@@ -1160,7 +1287,7 @@
         },
         {
             "name": "M_Dake6676:PIV",
-            "mesh": 56,
+            "mesh": 61,
             "translation": [
                 -1.9589661359786988,
                 -18.21289825439453,
@@ -1170,7 +1297,7 @@
         {
             "name": "M_Dake6675",
             "children": [
-                107
+                119
             ],
             "translation": [
                 13.345351219177246,
@@ -1180,7 +1307,7 @@
         },
         {
             "name": "M_Dake6675:PIV",
-            "mesh": 57,
+            "mesh": 62,
             "translation": [
                 -13.345351219177246,
                 -0.6570850014686585,
@@ -1190,7 +1317,7 @@
         {
             "name": "M_Dake6674",
             "children": [
-                109
+                121
             ],
             "translation": [
                 7.872146606445313,
@@ -1200,7 +1327,7 @@
         },
         {
             "name": "M_Dake6674:PIV",
-            "mesh": 58,
+            "mesh": 63,
             "translation": [
                 -7.872146606445313,
                 -3.891251564025879,
@@ -1210,7 +1337,7 @@
         {
             "name": "M_Dake6673",
             "children": [
-                111
+                123
             ],
             "translation": [
                 13.018190383911133,
@@ -1220,7 +1347,7 @@
         },
         {
             "name": "M_Dake6673:PIV",
-            "mesh": 59,
+            "mesh": 64,
             "translation": [
                 -13.018190383911133,
                 -5.748495101928711,
@@ -1230,7 +1357,7 @@
         {
             "name": "M_Dake6672",
             "children": [
-                113
+                125
             ],
             "translation": [
                 -7.770666599273682,
@@ -1251,7 +1378,7 @@
         },
         {
             "name": "M_Dake6672:PIV",
-            "mesh": 60,
+            "mesh": 65,
             "translation": [
                 6.982396602630615,
                 -3.72003173828125,
@@ -1260,12 +1387,12 @@
         },
         {
             "name": "M_Dake6671",
-            "mesh": 61
+            "mesh": 66
         },
         {
             "name": "M_Dake6670",
             "children": [
-                116
+                128
             ],
             "translation": [
                 0.0,
@@ -1275,7 +1402,7 @@
         },
         {
             "name": "M_Dake6670:PIV",
-            "mesh": 62,
+            "mesh": 67,
             "translation": [
                 0.0,
                 -9.472451210021973,
@@ -1285,7 +1412,7 @@
         {
             "name": "M_Dake6669",
             "children": [
-                118
+                130
             ],
             "translation": [
                 13.345351219177246,
@@ -1295,7 +1422,7 @@
         },
         {
             "name": "M_Dake6669:PIV",
-            "mesh": 63,
+            "mesh": 68,
             "translation": [
                 -13.345351219177246,
                 -0.6570850014686585,
@@ -1305,7 +1432,7 @@
         {
             "name": "M_Dake6668",
             "children": [
-                120
+                132
             ],
             "translation": [
                 0.0,
@@ -1315,7 +1442,7 @@
         },
         {
             "name": "M_Dake6668:PIV",
-            "mesh": 64,
+            "mesh": 69,
             "translation": [
                 0.0,
                 -12.903010368347168,
@@ -1564,7 +1691,7 @@
             ]
         },
         {
-            "name": "M_Dake6721Shape",
+            "name": "polySurfaceShape109",
             "extras": {
                 "targetNames": []
             },
@@ -1583,7 +1710,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6720",
+            "name": "polySurfaceShape108",
             "extras": {
                 "targetNames": []
             },
@@ -1602,7 +1729,7 @@
             ]
         },
         {
-            "name": "M_Dake6719Shape",
+            "name": "polySurfaceShape107",
             "extras": {
                 "targetNames": []
             },
@@ -1621,7 +1748,7 @@
             ]
         },
         {
-            "name": "M_Dake6718Shape",
+            "name": "polySurfaceShape106",
             "extras": {
                 "targetNames": []
             },
@@ -1640,7 +1767,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6717",
+            "name": "polySurfaceShape105",
             "extras": {
                 "targetNames": []
             },
@@ -1659,7 +1786,7 @@
             ]
         },
         {
-            "name": "M_Dake6716Shape",
+            "name": "polySurfaceShape104",
             "extras": {
                 "targetNames": []
             },
@@ -1678,7 +1805,7 @@
             ]
         },
         {
-            "name": "M_Dake6715Shape",
+            "name": "M_DakeShape6720",
             "extras": {
                 "targetNames": []
             },
@@ -1697,7 +1824,7 @@
             ]
         },
         {
-            "name": "M_Dake6714Shape",
+            "name": "M_Dake6719Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1716,7 +1843,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6713",
+            "name": "M_Dake6718Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1735,7 +1862,7 @@
             ]
         },
         {
-            "name": "M_Dake6712Shape",
+            "name": "M_DakeShape6717",
             "extras": {
                 "targetNames": []
             },
@@ -1754,7 +1881,7 @@
             ]
         },
         {
-            "name": "M_Dake6711Shape",
+            "name": "M_Dake6716Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1773,7 +1900,7 @@
             ]
         },
         {
-            "name": "M_Dake6710Shape",
+            "name": "M_Dake6715Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1792,7 +1919,7 @@
             ]
         },
         {
-            "name": "M_Dake6709Shape",
+            "name": "M_Dake6714Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1811,7 +1938,7 @@
             ]
         },
         {
-            "name": "M_Dake6708Shape",
+            "name": "M_DakeShape6713",
             "extras": {
                 "targetNames": []
             },
@@ -1830,7 +1957,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6707",
+            "name": "M_Dake6712Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1849,7 +1976,7 @@
             ]
         },
         {
-            "name": "M_Dake6706Shape",
+            "name": "M_Dake6711Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1868,7 +1995,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6705",
+            "name": "M_Dake6710Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1887,7 +2014,7 @@
             ]
         },
         {
-            "name": "M_Dake6704Shape",
+            "name": "M_Dake6709Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1906,7 +2033,7 @@
             ]
         },
         {
-            "name": "M_Dake6703Shape",
+            "name": "M_Dake6708Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1925,7 +2052,7 @@
             ]
         },
         {
-            "name": "M_Dake6702Shape",
+            "name": "M_DakeShape6707",
             "extras": {
                 "targetNames": []
             },
@@ -1939,12 +2066,12 @@
                     },
                     "indices": 160,
                     "mode": 4,
-                    "material": 30
+                    "material": 32
                 }
             ]
         },
         {
-            "name": "M_Dake6701Shape",
+            "name": "M_Dake6706Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1958,12 +2085,12 @@
                     },
                     "indices": 165,
                     "mode": 4,
-                    "material": 30
+                    "material": 33
                 }
             ]
         },
         {
-            "name": "M_Dake6700Shape",
+            "name": "M_DakeShape6705",
             "extras": {
                 "targetNames": []
             },
@@ -1977,12 +2104,12 @@
                     },
                     "indices": 170,
                     "mode": 4,
-                    "material": 30
+                    "material": 34
                 }
             ]
         },
         {
-            "name": "M_Dake6699Shape",
+            "name": "M_Dake6704Shape",
             "extras": {
                 "targetNames": []
             },
@@ -1996,12 +2123,12 @@
                     },
                     "indices": 175,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6698Shape",
+            "name": "M_Dake6703Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2015,12 +2142,12 @@
                     },
                     "indices": 180,
                     "mode": 4,
-                    "material": 30
+                    "material": 36
                 }
             ]
         },
         {
-            "name": "M_Dake6697Shape",
+            "name": "M_Dake6702Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2034,12 +2161,12 @@
                     },
                     "indices": 185,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6696Shape",
+            "name": "M_Dake6701Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2053,12 +2180,12 @@
                     },
                     "indices": 190,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6695Shape",
+            "name": "M_Dake6700Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2072,12 +2199,12 @@
                     },
                     "indices": 195,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6694Shape",
+            "name": "M_Dake6699Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2091,12 +2218,12 @@
                     },
                     "indices": 200,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6693Shape",
+            "name": "M_Dake6698Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2110,12 +2237,12 @@
                     },
                     "indices": 205,
                     "mode": 4,
-                    "material": 30
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6692Shape",
+            "name": "M_Dake6697Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2129,12 +2256,12 @@
                     },
                     "indices": 210,
                     "mode": 4,
-                    "material": 31
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_DakeShape6691",
+            "name": "M_Dake6696Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2148,12 +2275,12 @@
                     },
                     "indices": 215,
                     "mode": 4,
-                    "material": 32
+                    "material": 35
                 }
             ]
         },
         {
-            "name": "M_Dake6690Shape",
+            "name": "M_Dake6695Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2167,7 +2294,102 @@
                     },
                     "indices": 220,
                     "mode": 4,
-                    "material": 33
+                    "material": 35
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6694Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 226,
+                        "POSITION": 227,
+                        "TANGENT": 228,
+                        "TEXCOORD_0": 229
+                    },
+                    "indices": 225,
+                    "mode": 4,
+                    "material": 35
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6693Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 231,
+                        "POSITION": 232,
+                        "TANGENT": 233,
+                        "TEXCOORD_0": 234
+                    },
+                    "indices": 230,
+                    "mode": 4,
+                    "material": 35
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6692Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 236,
+                        "POSITION": 237,
+                        "TANGENT": 238,
+                        "TEXCOORD_0": 239
+                    },
+                    "indices": 235,
+                    "mode": 4,
+                    "material": 36
+                }
+            ]
+        },
+        {
+            "name": "M_DakeShape6691",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 241,
+                        "POSITION": 242,
+                        "TANGENT": 243,
+                        "TEXCOORD_0": 244
+                    },
+                    "indices": 240,
+                    "mode": 4,
+                    "material": 37
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6690Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 246,
+                        "POSITION": 247,
+                        "TANGENT": 248,
+                        "TEXCOORD_0": 249
+                    },
+                    "indices": 245,
+                    "mode": 4,
+                    "material": 38
                 }
             ]
         },
@@ -2179,115 +2401,20 @@
             "primitives": [
                 {
                     "attributes": {
-                        "NORMAL": 226,
-                        "POSITION": 227,
-                        "TANGENT": 228,
-                        "TEXCOORD_0": 229,
-                        "TEXCOORD_1": 230
+                        "NORMAL": 251,
+                        "POSITION": 252,
+                        "TANGENT": 253,
+                        "TEXCOORD_0": 254,
+                        "TEXCOORD_1": 255
                     },
-                    "indices": 225,
-                    "mode": 4,
-                    "material": 34
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6688Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 232,
-                        "POSITION": 233,
-                        "TANGENT": 234,
-                        "TEXCOORD_0": 235
-                    },
-                    "indices": 231,
-                    "mode": 4,
-                    "material": 35
-                }
-            ]
-        },
-        {
-            "name": "M_Dake972Shape6687",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 237,
-                        "POSITION": 238,
-                        "TANGENT": 239,
-                        "TEXCOORD_0": 240
-                    },
-                    "indices": 236,
-                    "mode": 4,
-                    "material": 36
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6686Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 242,
-                        "POSITION": 243,
-                        "TANGENT": 244,
-                        "TEXCOORD_0": 245
-                    },
-                    "indices": 241,
-                    "mode": 4,
-                    "material": 37
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6685Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 247,
-                        "POSITION": 248,
-                        "TANGENT": 249,
-                        "TEXCOORD_0": 250
-                    },
-                    "indices": 246,
-                    "mode": 4,
-                    "material": 38
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6684Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 252,
-                        "POSITION": 253,
-                        "TANGENT": 254,
-                        "TEXCOORD_0": 255
-                    },
-                    "indices": 251,
+                    "indices": 250,
                     "mode": 4,
                     "material": 39
                 }
             ]
         },
         {
-            "name": "M_Dake6683Shape",
+            "name": "M_Dake6688Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2306,7 +2433,7 @@
             ]
         },
         {
-            "name": "M_DakeShape6682",
+            "name": "M_Dake972Shape6687",
             "extras": {
                 "targetNames": []
             },
@@ -2325,7 +2452,7 @@
             ]
         },
         {
-            "name": "M_Dake6681Shape",
+            "name": "M_Dake6686Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2344,7 +2471,7 @@
             ]
         },
         {
-            "name": "M_Dake6680Shape",
+            "name": "M_Dake6685Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2363,7 +2490,7 @@
             ]
         },
         {
-            "name": "M_Dake6679Shape",
+            "name": "M_Dake6684Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2373,12 +2500,107 @@
                         "NORMAL": 277,
                         "POSITION": 278,
                         "TANGENT": 279,
-                        "TEXCOORD_0": 280,
-                        "TEXCOORD_1": 281
+                        "TEXCOORD_0": 280
                     },
                     "indices": 276,
                     "mode": 4,
-                    "material": 34
+                    "material": 44
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6683Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 282,
+                        "POSITION": 283,
+                        "TANGENT": 284,
+                        "TEXCOORD_0": 285
+                    },
+                    "indices": 281,
+                    "mode": 4,
+                    "material": 45
+                }
+            ]
+        },
+        {
+            "name": "M_DakeShape6682",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 287,
+                        "POSITION": 288,
+                        "TANGENT": 289,
+                        "TEXCOORD_0": 290
+                    },
+                    "indices": 286,
+                    "mode": 4,
+                    "material": 46
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6681Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 292,
+                        "POSITION": 293,
+                        "TANGENT": 294,
+                        "TEXCOORD_0": 295
+                    },
+                    "indices": 291,
+                    "mode": 4,
+                    "material": 47
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6680Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 297,
+                        "POSITION": 298,
+                        "TANGENT": 299,
+                        "TEXCOORD_0": 300
+                    },
+                    "indices": 296,
+                    "mode": 4,
+                    "material": 48
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6679Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 302,
+                        "POSITION": 303,
+                        "TANGENT": 304,
+                        "TEXCOORD_0": 305,
+                        "TEXCOORD_1": 306
+                    },
+                    "indices": 301,
+                    "mode": 4,
+                    "material": 39
                 }
             ]
         },
@@ -2388,93 +2610,6 @@
                 "targetNames": []
             },
             "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 283,
-                        "POSITION": 284,
-                        "TANGENT": 285,
-                        "TEXCOORD_0": 286
-                    },
-                    "indices": 282,
-                    "mode": 4,
-                    "material": 44
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6676Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 288,
-                        "POSITION": 289,
-                        "TANGENT": 290,
-                        "TEXCOORD_0": 291
-                    },
-                    "indices": 287,
-                    "mode": 4,
-                    "material": 45
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6675Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 293,
-                        "POSITION": 294,
-                        "TANGENT": 295,
-                        "TEXCOORD_0": 296
-                    },
-                    "indices": 292,
-                    "mode": 4,
-                    "material": 46
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6674Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 298,
-                        "POSITION": 299,
-                        "TANGENT": 300,
-                        "TEXCOORD_0": 301
-                    },
-                    "indices": 297,
-                    "mode": 4,
-                    "material": 47
-                }
-            ]
-        },
-        {
-            "name": "M_Dake6673Shape",
-            "extras": {
-                "targetNames": []
-            },
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 303,
-                        "POSITION": 304,
-                        "TANGENT": 305,
-                        "TEXCOORD_0": 306
-                    },
-                    "indices": 302,
-                    "mode": 4,
-                    "material": 48
-                },
                 {
                     "attributes": {
                         "NORMAL": 308,
@@ -2489,7 +2624,7 @@
             ]
         },
         {
-            "name": "M_Dake6672Shape",
+            "name": "M_Dake6676Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2508,7 +2643,7 @@
             ]
         },
         {
-            "name": "M_Dake6671Shape",
+            "name": "M_Dake6675Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2527,7 +2662,7 @@
             ]
         },
         {
-            "name": "M_Dake6670Shape",
+            "name": "M_Dake6674Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2546,7 +2681,7 @@
             ]
         },
         {
-            "name": "M_Dake6669Shape",
+            "name": "M_Dake6673Shape",
             "extras": {
                 "targetNames": []
             },
@@ -2561,6 +2696,93 @@
                     "indices": 327,
                     "mode": 4,
                     "material": 53
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 333,
+                        "POSITION": 334,
+                        "TANGENT": 335,
+                        "TEXCOORD_0": 336
+                    },
+                    "indices": 332,
+                    "mode": 4,
+                    "material": 54
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6672Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 338,
+                        "POSITION": 339,
+                        "TANGENT": 340,
+                        "TEXCOORD_0": 341
+                    },
+                    "indices": 337,
+                    "mode": 4,
+                    "material": 55
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6671Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 343,
+                        "POSITION": 344,
+                        "TANGENT": 345,
+                        "TEXCOORD_0": 346
+                    },
+                    "indices": 342,
+                    "mode": 4,
+                    "material": 56
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6670Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 348,
+                        "POSITION": 349,
+                        "TANGENT": 350,
+                        "TEXCOORD_0": 351
+                    },
+                    "indices": 347,
+                    "mode": 4,
+                    "material": 57
+                }
+            ]
+        },
+        {
+            "name": "M_Dake6669Shape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 353,
+                        "POSITION": 354,
+                        "TANGENT": 355,
+                        "TEXCOORD_0": 356
+                    },
+                    "indices": 352,
+                    "mode": 4,
+                    "material": 58
                 }
             ]
         },
@@ -2572,14 +2794,14 @@
             "primitives": [
                 {
                     "attributes": {
-                        "NORMAL": 333,
-                        "POSITION": 334,
-                        "TANGENT": 335,
-                        "TEXCOORD_0": 336
+                        "NORMAL": 358,
+                        "POSITION": 359,
+                        "TANGENT": 360,
+                        "TEXCOORD_0": 361
                     },
-                    "indices": 332,
+                    "indices": 357,
                     "mode": 4,
-                    "material": 54
+                    "material": 59
                 }
             ]
         }
@@ -2646,7 +2868,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader137",
@@ -2812,9 +3035,9 @@
             "name": "GLSLShader119",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.01764705963432789,
-                    0.01764705963432789,
-                    0.01764705963432789,
+                    0.0,
+                    0.0,
+                    0.0,
                     1.0
                 ],
                 "metallicFactor": 0.5,
@@ -2845,10 +3068,99 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
-            "name": "GLSLShader144",
+            "name": "GLSLShader187",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "doubleSided": true
+        },
+        {
+            "name": "GLSLShader186",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "doubleSided": true
+        },
+        {
+            "name": "GLSLShader185",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "doubleSided": true
+        },
+        {
+            "name": "GLSLShader183",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "doubleSided": true
+        },
+        {
+            "name": "GLSLShader182",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
                     1.0,
@@ -2867,6 +3179,28 @@
                 0.0,
                 0.0
             ]
+        },
+        {
+            "name": "GLSLShader184",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader124",
@@ -2908,7 +3242,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader145",
@@ -3010,7 +3345,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader175",
@@ -3073,15 +3409,16 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader151",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    1.0,
-                    1.0,
-                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
                     1.0
                 ],
                 "baseColorTexture": {
@@ -3094,7 +3431,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader150",
@@ -3133,7 +3471,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader123",
@@ -3250,7 +3589,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader166",
@@ -3352,13 +3692,14 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader130",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    1.0,
+                    0.0,
                     0.4615333080291748,
                     0.0,
                     1.0
@@ -3370,7 +3711,8 @@
                 1.0,
                 0.4615333080291748,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader155",
@@ -3391,8 +3733,7 @@
                 0.0,
                 0.0,
                 0.0
-            ],
-            "doubleSided": true
+            ]
         },
         {
             "name": "GLSLShader168",
@@ -3440,7 +3781,7 @@
             "name": "GLSLShader174",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    1.0,
+                    0.0,
                     0.2692333459854126,
                     0.0,
                     1.0
@@ -3467,16 +3808,16 @@
                 "roughnessFactor": 0.5
             },
             "emissiveFactor": [
-                0.0,
-                0.0,
-                0.0
+                1.0,
+                1.0,
+                1.0
             ]
         },
         {
             "name": "GLSLShader146",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    1.0,
+                    0.0,
                     0.3846166729927063,
                     0.0,
                     1.0
@@ -3608,7 +3949,8 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "doubleSided": true
         },
         {
             "name": "GLSLShader160",
@@ -3674,7 +4016,7 @@
             "name": "GLSLShader161",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    1.0,
+                    0.0,
                     0.2692333459854126,
                     0.0,
                     1.0
@@ -3727,7 +4069,7 @@
             "source": 8
         },
         {
-            "sampler": 0,
+            "sampler": 1,
             "source": 9
         },
         {
@@ -3966,16 +4308,16 @@
                 {
                     "sampler": 0,
                     "target": {
-                        "node": 88,
+                        "node": 100,
                         "path": "rotation"
                     }
                 }
             ],
             "samplers": [
                 {
-                    "input": 337,
+                    "input": 362,
                     "interpolation": "LINEAR",
-                    "output": 338
+                    "output": 363
                 }
             ]
         }
@@ -5100,13 +5442,13 @@
             "type": "VEC2"
         },
         {
-            "name": "M_Dake6721Shape#0/indices",
+            "name": "polySurfaceShape109#0/indices",
             "bufferView": 0,
             "byteOffset": 323916,
             "componentType": 5123,
-            "count": 72,
+            "count": 6,
             "max": [
-                45
+                3
             ],
             "min": [
                 0
@@ -5114,11 +5456,441 @@
             "type": "SCALAR"
         },
         {
-            "name": "M_Dake6721Shape#0/vertices/NORMAL",
+            "name": "polySurfaceShape109#0/vertices/NORMAL",
             "bufferView": 1,
             "byteOffset": 2079432,
             "componentType": 5126,
-            "count": 46,
+            "count": 4,
+            "max": [
+                0.000007949000064400025,
+                0.0,
+                1.0
+            ],
+            "min": [
+                0.000007949000064400025,
+                0.0,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape109#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2079480,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                -13.66475772857666,
+                3.4018187522888185,
+                20.251474380493165
+            ],
+            "min": [
+                -18.629539489746099,
+                2.5605642795562746,
+                20.251436233520509
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape109#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1386288,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                1.0,
+                7.199999885187937e-8,
+                -0.000007949000064400025,
+                1.0
+            ],
+            "min": [
+                1.0,
+                -9.699999736767497e-8,
+                -0.000007949000064400025,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "polySurfaceShape109#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 693144,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                0.8244600296020508,
+                0.986587405204773
+            ],
+            "min": [
+                0.2054719924926758,
+                0.8817035555839539
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "polySurfaceShape108#0/indices",
+            "bufferView": 0,
+            "byteOffset": 323928,
+            "componentType": 5123,
+            "count": 9,
+            "max": [
+                4
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "polySurfaceShape108#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2079528,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                -0.00001021899970510276,
+                0.0,
+                1.0
+            ],
+            "min": [
+                -0.00001021899970510276,
+                0.0,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape108#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2079588,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                -13.706178665161133,
+                5.3983001708984379,
+                20.25931739807129
+            ],
+            "min": [
+                -19.456911087036138,
+                4.343482971191406,
+                20.259254455566408
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape108#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1386352,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                1.0,
+                0.000006141000085335691,
+                0.00001021899970510276,
+                1.0
+            ],
+            "min": [
+                1.0,
+                -8.150000212481245e-7,
+                0.00001021899970510276,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "polySurfaceShape108#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 693176,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                0.8389355540275574,
+                0.8750579357147217
+            ],
+            "min": [
+                0.12195999920368196,
+                0.7435488104820252
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "polySurfaceShape107#0/indices",
+            "bufferView": 0,
+            "byteOffset": 323946,
+            "componentType": 5123,
+            "count": 6,
+            "max": [
+                3
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "polySurfaceShape107#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2079648,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                8.150000212481245e-7,
+                0.00001830300061556045,
+                1.0
+            ],
+            "min": [
+                8.150000212481245e-7,
+                0.00001830300061556045,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape107#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2079696,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                -13.548267364501954,
+                7.861265182495117,
+                20.231395721435548
+            ],
+            "min": [
+                -18.537952423095704,
+                6.923323154449463,
+                20.23136329650879
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape107#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1386432,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                1.0,
+                1.5800000596755129e-7,
+                -8.150000212481245e-7,
+                1.0
+            ],
+            "min": [
+                1.0,
+                1.5800000596755129e-7,
+                -8.150000212481245e-7,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "polySurfaceShape107#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 693216,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                0.8320004940032959,
+                0.7301702499389648
+            ],
+            "min": [
+                0.2099106013774872,
+                0.6132318377494812
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "polySurfaceShape106#0/indices",
+            "bufferView": 0,
+            "byteOffset": 323958,
+            "componentType": 5123,
+            "count": 6,
+            "max": [
+                3
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "polySurfaceShape106#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2079744,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                -0.000010210999789705966,
+                0.0,
+                1.0
+            ],
+            "min": [
+                -0.000010210999789705966,
+                0.0,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape106#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2079792,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                -13.50614070892334,
+                12.509072303771973,
+                20.182518005371099
+            ],
+            "min": [
+                -16.50049591064453,
+                9.514716148376465,
+                20.18248748779297
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape106#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1386496,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                1.0,
+                -1.5999999902760465e-7,
+                0.000010210999789705966,
+                1.0
+            ],
+            "min": [
+                1.0,
+                -3.199999980552093e-7,
+                0.000010210999789705966,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "polySurfaceShape106#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 693248,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                0.7030231952667236,
+                0.5999013185501099
+            ],
+            "min": [
+                0.3297002613544464,
+                0.2265782356262207
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "polySurfaceShape105#0/indices",
+            "bufferView": 0,
+            "byteOffset": 323970,
+            "componentType": 5123,
+            "count": 9,
+            "max": [
+                4
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "polySurfaceShape105#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2079840,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                -0.000001053000005413196,
+                0.000015566000001854264,
+                1.0
+            ],
+            "min": [
+                -0.000001053000005413196,
+                0.000015566000001854264,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape105#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 2079900,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                -12.4876708984375,
+                15.02828598022461,
+                20.269481658935548
+            ],
+            "min": [
+                -19.56524658203125,
+                13.478261947631836,
+                20.26944160461426
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "polySurfaceShape105#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 1386560,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                1.0,
+                0.0000012279999737074832,
+                0.000001053000005413196,
+                1.0
+            ],
+            "min": [
+                1.0,
+                -8.300000331473713e-8,
+                0.000001053000005413196,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "polySurfaceShape105#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 693280,
+            "componentType": 5126,
+            "count": 5,
+            "max": [
+                0.9925631284713744,
+                0.20857977867126466
+            ],
+            "min": [
+                0.11016272753477097,
+                0.015329480171203614
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "polySurfaceShape104#0/indices",
+            "bufferView": 0,
+            "byteOffset": 323988,
+            "componentType": 5123,
+            "count": 36,
+            "max": [
+                23
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "polySurfaceShape104#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 2079960,
+            "componentType": 5126,
+            "count": 24,
             "max": [
                 1.0,
                 1.0,
@@ -5132,29 +5904,29 @@
             "type": "VEC3"
         },
         {
-            "name": "M_Dake6721Shape#0/vertices/POSITION",
+            "name": "polySurfaceShape104#0/vertices/POSITION",
             "bufferView": 1,
-            "byteOffset": 2079984,
+            "byteOffset": 2080248,
             "componentType": 5126,
-            "count": 46,
+            "count": 24,
             "max": [
-                -12.4876708984375,
-                15.02828598022461,
-                20.269481658935548
+                -13.74931526184082,
+                11.931533813476565,
+                20.189022064208986
             ],
             "min": [
-                -19.56524658203125,
-                2.5605642795562746,
+                -16.257322311401368,
+                10.789048194885254,
                 20.17573928833008
             ],
             "type": "VEC3"
         },
         {
-            "name": "M_Dake6721Shape#0/vertices/TANGENT",
+            "name": "polySurfaceShape104#0/vertices/TANGENT",
             "bufferView": 2,
-            "byteOffset": 1386288,
+            "byteOffset": 1386640,
             "componentType": 5126,
-            "count": 46,
+            "count": 24,
             "max": [
                 1.0,
                 1.0,
@@ -5170,18 +5942,18 @@
             "type": "VEC4"
         },
         {
-            "name": "M_Dake6721Shape#0/vertices/TEXCOORD_0",
+            "name": "polySurfaceShape104#0/vertices/TEXCOORD_0",
             "bufferView": 3,
-            "byteOffset": 693144,
+            "byteOffset": 693320,
             "componentType": 5126,
-            "count": 46,
+            "count": 24,
             "max": [
-                0.9925631284713744,
-                0.986587405204773
+                0.2979870736598969,
+                0.475960910320282
             ],
             "min": [
                 0.03943008184432984,
-                0.015329480171203614
+                0.38500314950942995
             ],
             "type": "VEC2"
         },
@@ -6453,7 +7225,7 @@
             ],
             "min": [
                 -0.977352499961853,
-                -0.7761366963386536,
+                -0.7761367559432983,
                 -0.999999225139618,
                 1.0
             ],

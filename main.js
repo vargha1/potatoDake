@@ -1,18 +1,15 @@
 import * as T from "three";
 import gsap from "gsap";
-import { CSS2DObject, OrbitControls, Reflector, TextGeometry, FontLoader } from "three/examples/jsm/Addons.js";
+import { OrbitControls, Reflector, TextGeometry, FontLoader } from "three/examples/jsm/Addons.js";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';;
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
-import { TextureLoader } from "three";
-import { VideoTexture } from "three";
 import HelvetikerFont from "three/examples/fonts/helvetiker_regular.typeface.json";
 import RajdHani from "./RajdHani.json"
 
-let isOpen = true;
 const fontLoader = new FontLoader()
 const font = fontLoader.parse(HelvetikerFont)
 const font2 = fontLoader.parse(RajdHani)
@@ -29,8 +26,6 @@ textMesh.rotateY(30.34)
 textMesh.rotateX(31.8)
 textMesh.rotateZ(0.2)
 
-document.getElementById("video").play()
-const video = new VideoTexture(document.getElementById("video"))
 const audio = document.getElementById("audio");
 var click = new Audio('Sounds/click.mp3');
 var whoosh = new Audio("Sounds/whoosh.mp3")
@@ -51,7 +46,6 @@ loadingManager.onLoad = () => {
 }
 
 const loader = new GLTFLoader(loadingManager).setPath("./model/");
-const loader2 = new TextureLoader()
 
 const renderer = new T.WebGLRenderer({ antialias: true, alpha: true });
 // const renderer2 = new CSS2DRenderer();
@@ -64,13 +58,6 @@ renderer.shadowMap.enabled = true;
 // renderer.toneMappingExposure = 1.5
 // renderer.outputColorSpace = T.SRGBColorSpace
 renderer.domElement.classList.add("absolute")
-// renderer2.domElement.classList.add("z-[4]")
-// renderer2.domElement.classList.add("absolute")
-// renderer2.domElement.style.pointerEvents = "none";
-// renderer2.domElement.classList.add("top-0")
-// renderer2.domElement.classList.add("w-[1000px]")
-// renderer2.domElement.classList.add("h-[500px]")
-// renderer2.setSize(window.innerWidth, window.innerHeight)
 const textGeometry2 = new TextGeometry('Design By Almubdieuntech.', {
   font: font2,
   size: 0.75,
@@ -84,20 +71,6 @@ textMesh2.name = "back3"
 textMesh2.position.set(-7, 1.4, -10)
 textMesh2.lookAt(-20.3, 1.4, -18)
 scene.add(textMesh2)
-
-const textGeometry3 = new TextGeometry('Potato Hut', {
-  font: font2,
-  size: 1.5,
-  depth: 0.5,
-});
-
-textGeometry3.computeBoundingBox();
-const textMat3 = new T.MeshStandardMaterial({ color: 0xffff00 })
-const textMesh3 = new T.Mesh(textGeometry3, textMat3)
-textMesh3.name = "PotatoHut"
-textMesh3.position.set(-7, 1.4, -10)
-textMesh3.lookAt(-20.3, 1.4, -18)
-scene.add(textMesh3)
 
 camera.position.set(-35, 45, -60)
 
@@ -118,29 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },)
     document.getElementById("canvasHolder").appendChild(renderer.domElement);
-    // document.getElementById('canvasHolder').appendChild(renderer2.domElement);
     click.play()
     whoosh.play()
     window.setTimeout(() => { ding.play() }, 1000)
-
-
-    // window.setInterval(() => {
-    //   scene.traverseVisible(obj => {
-    //     if (obj.name == "rain") {
-    //       gsap.to(obj.position, {
-    //         y: 0,
-    //         duration: 2,
-    //         ease: "none",
-    //       })
-    //     }
-    //   })
-    //   scene.traverseVisible(obj => {
-    //     if (obj.name == "rain") {
-    //       const [y] = Array(1).fill().map(() => T.MathUtils.randFloatSpread(45))
-    //       obj.position.y = 40 + y
-    //     }
-    //   })
-    // }, 2005);
   }
 })
 
@@ -170,31 +123,9 @@ loader.load("dake01.gltf", function VR(gltf) {
   });
   const transparentPlane = new T.Mesh(geometry, transparentMaterial);
   transparentPlane.position.y = 1.02;  // Slightly above the reflective surface
-  // scene.add(transparentPlane);
   reflector.position.y = 0
   reflector.rotation.x = - Math.PI / 2;
   scene.add(reflector);
-  // mesh.children[0].children[0].traverseVisible((obj) => {
-  //   obj.layers.set(0)
-  // })
-  // const object1 = mesh.children[0].children[0].getObjectByName("M_Dake974PIV");
-  // const object2 = mesh.children[0].children[0].getObjectByName("D09PIV")
-  // const object3 = mesh.children[0].children[0].getObjectByName("D05PIV")
-  // const object4 = mesh.children[0].children[0].getObjectByName("D06PIV")
-  // const object5 = mesh.children[0].children[0].getObjectByName("D07PIV")
-  // mesh.children[0].children[0].getObjectByName("M_Dake13").position.y = 0.01;
-  // mesh.children[0].children[0].getObjectByName("M_Dake13").material.transparent = true;
-  // mesh.children[0].children[0].getObjectByName("M_Dake13").material.opacity = 0.90;
-  // mesh.children[0].children[0].getObjectByName("M_Dake990PIV").position.y = 0.05
-  // object1.material = [
-  //   new T.MeshStandardMaterial({ color: 0xffffff }),
-  //   new T.MeshStandardMaterial({ color: 0xffffff }),
-  //   new T.MeshStandardMaterial({ color: 0xffffff }),
-  //   new T.MeshStandardMaterial({ color: 0xffffff }),
-  //   new T.MeshStandardMaterial({ map: new TextureLoader().load("images/vendingMachineMenu.png") }),
-  //   new T.MeshStandardMaterial({ color: 0xffffff }),
-  // ]
-  // console.log(object1);
 
   const geo5 = mesh.children[0].children[0].getObjectByName("M_Dake6713PIV").geometry;
   const posAtr = geo5.attributes.position;
@@ -225,151 +156,16 @@ loader.load("dake01.gltf", function VR(gltf) {
   // Center the pointGeometry around the origin
   pointGeometry.translate(-center.x, -center.y, -center.z);
 
+  mesh.children[0].children[0].getObjectByName("M_Dake6687PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6668PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6681PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6670PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6686PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6711PIV").layers.toggle(BLOOM_SCENE)
+
   scene.add(points);
-
-  // if (object2) {
-  //   new TextureLoader().load("images/BSOD.png", (texture) => {
-  //     // تنظیمات تکسچر
-  //     texture.encoding = T.sRGBEncoding;
-  //     texture.flipY = false;  // ممکن است نیاز باشد این را تغییر دهید
-
-  //     // تنظیم wrapping و filtering
-  //     texture.wrapS = texture.wrapT = T.ClampToEdgeWrapping;
-  //     texture.minFilter = T.LinearFilter;
-  //     texture.magFilter = T.LinearFilter;
-  //     texture.repeat.set(15, 10);
-  //     texture.wrapS = 1000;
-  //     texture.wrapT = 1000;
-  //     texture.offset.set(0.35, -0.05);
-  //     // texture.rotation = 0;
-  //     // ایجاد متریال جدید
-  //     const material2 = new T.MeshStandardMaterial({
-  //       map: texture,
-  //     });
-
-  //     // اعمال متریال به آبجکت
-  //     object2.material = material2;
-  //     object2.material.needsUpdate = true;
-  //     object2.material.toneMapped = true;
-  //     // بررسی UV mapping
-  //     if (!object2.geometry.attributes.uv) {
-  //       console.warn("No UV mapping found on the object. Texture may not display correctly.");
-  //     } else {
-  //       // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-  //       // object2.geometry.attributes.uv.needsUpdate = true;
-  //     }
-
-  //     // درخواست رندر مجدد صحنه (اگر نیاز است)
-  //     if (renderer && scene && camera) {
-  //       renderer.render(scene, camera);
-  //     }
-  //   });
-  // }
-  // if (object3) {
-  //   // اعمال متریال به آبجکت
-  //   object3.material = new T.MeshStandardMaterial({ map: video });
-  //   object3.material.map.repeat.set(20, 15);
-  //   object3.material.map.wrapS = 1000;
-  //   object3.material.map.wrapT = 1002;
-  //   // object3.material.needsUpdate = true;
-  //   object3.material.toneMapped = false;
-  //   // بررسی UV mapping
-  //   if (!object3.geometry.attributes.uv) {
-  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
-  //   } else {
-  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-  //     // object3.geometry.attributes.uv.needsUpdate = true;
-  //   }
-
-  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
-  // }
-  // if (object4) {
-  //   // اعمال متریال به آبجکت
-  //   object4.material = new T.MeshStandardMaterial({ map: video });
-  //   object4.material.map.repeat.set(20, 15);
-  //   object4.material.map.wrapS = 1000;
-  //   object4.material.map.wrapT = 1002;
-  //   // object4.material.needsUpdate = true;
-  //   object4.material.toneMapped = false;
-  //   // بررسی UV mapping
-  //   if (!object4.geometry.attributes.uv) {
-  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
-  //   } else {
-  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-  //     // object4.geometry.attributes.uv.needsUpdate = true;
-  //   }
-
-  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
-  // }
-  // if (object5) {
-  //   // اعمال متریال به آبجکت
-  //   object5.material = new T.MeshStandardMaterial({ map: video });
-  //   object5.material.map.repeat.set(20, 15);
-  //   object5.material.map.wrapS = 1000;
-  //   object5.material.map.wrapT = 1002;
-  //   // object5.material.needsUpdate = true;
-  //   object5.material.toneMapped = false;
-  //   // بررسی UV mapping
-  //   if (!object5.geometry.attributes.uv) {
-  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
-  //   } else {
-  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-  //     // object5.geometry.attributes.uv.needsUpdate = true;
-  //   }
-
-  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
-  // }
-  // if (object5) {
-  //   // اعمال متریال به آبجکت
-  //   object5.material = new T.MeshStandardMaterial({ map: video });
-  //   object5.material.map.repeat.set(20, 15);
-  //   object5.material.map.wrapS = 1000;
-  //   object5.material.map.wrapT = 1002;
-  //   // object5.material.needsUpdate = true;
-  //   object5.material.toneMapped = false;
-  //   // بررسی UV mapping
-  //   if (!object5.geometry.attributes.uv) {
-  //     console.warn("No UV mapping found on the object. Texture may not display correctly.");
-  //   } else {
-  //     // اگر نیاز به تنظیم UV باشد، می‌توانید اینجا انجام دهید
-  //     // object5.geometry.attributes.uv.needsUpdate = true;
-  //   }
-
-  //   // درخواست رندر مجدد صحنه (اگر نیاز است)
-  // }
-
-  // loader2.load("./images/Monitor_01.png", function (texture) {
-  //   texture.wrapS = T.RepeatWrapping;
-  //   texture.repeat.x = 1;
-  //   texture.flipY = false;
-  //   mesh.children[0].children[0].getObjectByName("D11PIV").material.map = texture;
-  // })
-  // loader2.load("./images/Monitor_011.png", function (texture) {
-  //   texture.wrapS = T.RepeatWrapping;
-  //   texture.repeat.x = 1;
-  //   texture.flipY = false;
-  //   mesh.children[0].children[0].getObjectByName("D02PIV").material.map = texture;
-  // })
-
-  // mesh.children[0].children[0].getObjectByName("M_Dake6PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("D09PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake16PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake15PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake12PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake984PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake991PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake1005PIV").layers.toggle(BLOOM_SCENE)
-  // mesh.children[0].children[0].getObjectByName("M_Dake1031PIV").layers.toggle(BLOOM_SCENE)
   scene.add(mesh)
 })
-
-loader.setPath("./mars/")
-
-// loader.load("scene.gltf", function (gltf) {
-//   const mesh = gltf.scene;
-//   mesh.position.set(-25, 70, 25)
-//   scene.add(mesh)
-// })
 
 const cube = new T.Mesh(new T.BoxGeometry(1.3, 0.7, 0.1), new T.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 }))
 cube.position.set(13.7, 5, -0.8)
@@ -420,7 +216,7 @@ const outputPass = new OutputPass();
 
 const bloomPass = new UnrealBloomPass(new T.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
 bloomPass.threshold = 0
-bloomPass.strength = 0.5
+bloomPass.strength = 0.3
 bloomPass.radius = 0.2
 
 const bloomComposer = new EffectComposer(renderer);
@@ -571,7 +367,8 @@ function onMouseDown(event) {
   if (intersections.length > 0) {
     intersections[0].object.layers.toggle(BLOOM_SCENE)
     console.log(intersections[0].object);
-    if (intersections[0].object.name == "M_Dake6721PIV") {
+
+    if (intersections[0].object.name == "polySurface105PIV") {
       click.play()
       whoosh.play()
       gsap.to(camera.position, {
@@ -586,27 +383,9 @@ function onMouseDown(event) {
         },
       })
       controls.enabled = false;
+      controls.maxPolarAngle = 1.73;
     }
-    if (intersections[0].object.name == "aboutPIV") {
-      click.play()
-      whoosh.play()
-      if (detectDeviceType == "Mobile") {
-        return
-      } else {
-        gsap.to(camera.position, {
-          x: 16,
-          y: 40,
-          z: 36,
-          duration: 1.4,
-          ease: "none",
-          onUpdate: function () {
-            controls.target = new T.Vector3(0, 3, 0)
-            controls.update()
-          },
-        })
-        controls.maxPolarAngle = 1.5
-      }
-    }
+
     if (intersections[0].object.name == "back") {
       click.play()
       whoosh.play()
@@ -622,74 +401,33 @@ function onMouseDown(event) {
         },
       })
       controls.enabled = true;
+      controls.maxPolarAngle = 1.73;
     }
-    if (intersections[0].object.name == "franchisingPIV") {
-      if (detectDeviceType() == "Desktop") {
-        click.play()
-        whoosh.play()
-        // css3DObject.scale(0.00470, 0.00505, 1)
-        // css3DObject2.scale(0.00470, 0.00505, 1)
-        textMesh.position.set(-8, 29, -8.6);
-        scene.add(textMesh);
-        gsap.to(camera.position, {
-          x: -15.3,
-          y: 26.3,
-          z: -3.7,
-          duration: 1.4,
-          ease: "none",
-          onUpdate: function () {
-            controls.target = new T.Vector3(0, 26.3, -3.7)
-            controls.update()
-          },
-        })
-        controls.enabled = false;
-      } else {
 
-        click.play()
-        whoosh.play()
-        textMesh.position.set(-8, 29, -8.6);
-        scene.add(textMesh);
-        gsap.to(camera.position, {
-          x: -21.3,
-          y: 26.3,
-          z: -3.7,
-          duration: 1.4,
-          ease: "none",
-          onUpdate: function () {
-            controls.target = new T.Vector3(0, 26.3, -3.7)
-            controls.update()
-          },
-        })
-        controls.enabled = true;
-      }
-    }
-    if (intersections[0].object.name == "back2") {
+    if (intersections[0].object.name == "polySurface109PIV") {
       click.play()
       whoosh.play()
-      scene.remove(textMesh);
       gsap.to(camera.position, {
-        x: -18,
-        y: 5,
-        z: 45,
+        x: 16,
+        y: 40,
+        z: 36,
         duration: 1.4,
         ease: "none",
         onUpdate: function () {
-          controls.target = new T.Vector3(0, 13, 0)
+          controls.target = new T.Vector3(0, 3, 0)
           controls.update()
         },
       })
-      controls.enabled = true;
+      controls.maxPolarAngle = 1.5
     }
-    if (intersections[0].object.name == "D11PIV" && isOpen) {
+
+    if (intersections[0].object.name == "polySurface106PIV") {
       click.play()
-      document.getElementById("cover").classList.remove("hidden")
-      document.getElementById("wrapper").classList.remove("hidden")
-      document.getElementById("popframe").classList.remove("invisible")
-      document.getElementById("popframe").classList.remove("opacity-0")
-      document.getElementById("popframe").classList.remove("-mt-[100%]")
-      controls.enabled = true;
-      isOpen = false;
+      whoosh.play()
+      window.location.href = "https://g.page/r/CZdKKnHvnH-lEB0/review"
+      controls.maxPolarAngle = 1.5
     }
+
     if (intersections[0].object.name == "points") {
       const geo5 = intersections[0].object.geometry;
       const posAtr = geo5.attributes.position;
@@ -828,12 +566,12 @@ window.removePopup = () => {
   isOpen = true;
 }
 
-function detectDeviceType() {
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    console.log("Mobile");
-    return "Mobile";
-  } else return "Desktop"
-}
+// function detectDeviceType() {
+//   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+//     console.log("Mobile");
+//     return "Mobile";
+//   } else return "Desktop"
+// }
 
 function darkenNonBloomed(obj) {
   if (obj.isMesh && bloomLayer.test(obj.layers) === false) {
@@ -862,7 +600,7 @@ function addStars() {
   scene.add(starsMesh);
 }
 
-// Array(1200).fill().forEach(addStars)
+Array(1200).fill().forEach(addStars)
 
 scene.traverseVisible(obj => {
   if (obj.name == "rain") {
@@ -887,8 +625,8 @@ function animate() {
   // spin.rotateOnAxis(new T.Vector3(1,0,0) , 1)
   controls.update()
   scene.children.forEach(element => {
-    if(element.name == "points"){
-      element.rotation.y+=0.01
+    if (element.name == "points") {
+      element.rotation.y += 0.01
     }
   })
 
