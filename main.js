@@ -104,6 +104,7 @@ window.addEventListener('resize', () => {
   bloomComposer.setSize(window.innerWidth, window.innerHeight);
 });
 
+let mixer, clock;
 loader.load("dake01.gltf", function VR(gltf) {
   var mesh = gltf.scene;
   console.log(mesh);
@@ -156,13 +157,30 @@ loader.load("dake01.gltf", function VR(gltf) {
   // Center the pointGeometry around the origin
   pointGeometry.translate(-center.x, -center.y, -center.z);
 
+  const textureLoader = new T.TextureLoader();
+  const texture = textureLoader.load('images/Tablo_Down.png');
+  const texture2 = textureLoader.load('images/Tablo_UP.png');
+  texture.flipY = false
+  texture2.flipY = false
+
   mesh.children[0].children[0].getObjectByName("M_Dake6687PIV").layers.toggle(BLOOM_SCENE)
   mesh.children[0].children[0].getObjectByName("M_Dake6668PIV").layers.toggle(BLOOM_SCENE)
   mesh.children[0].children[0].getObjectByName("M_Dake6681PIV").layers.toggle(BLOOM_SCENE)
   mesh.children[0].children[0].getObjectByName("M_Dake6670PIV").layers.toggle(BLOOM_SCENE)
   mesh.children[0].children[0].getObjectByName("M_Dake6686PIV").layers.toggle(BLOOM_SCENE)
   mesh.children[0].children[0].getObjectByName("M_Dake6711PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6723Shape").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6680PIV").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6682").layers.toggle(BLOOM_SCENE)
+  mesh.children[0].children[0].getObjectByName("M_Dake6708PIV").material.map = texture
+  mesh.children[0].children[0].getObjectByName("M_Dake6672PIV").material.map = texture2
 
+  mixer = new T.AnimationMixer(mesh);
+  gltf.animations.forEach((clip) => {
+    mixer.clipAction(clip).play();
+  });
+  clock = new T.Clock()
+  animate()
   scene.add(points);
   scene.add(mesh)
 })
@@ -365,7 +383,7 @@ function onMouseDown(event) {
 
   let intersections = raycaster.intersectObjects(scene.children, true);
   if (intersections.length > 0) {
-    intersections[0].object.layers.toggle(BLOOM_SCENE)
+    // intersections[0].object.layers.toggle(BLOOM_SCENE)
     console.log(intersections[0].object);
 
     if (intersections[0].object.name == "polySurface105PIV") {
@@ -620,7 +638,9 @@ window.removeImgFrames = () => {
 function animate() {
   // console.log(scene.children)
   requestAnimationFrame(animate);
+  mixer.update(clock.getDelta());
   // console.log(camera.position);
+
   // const spin = scene.children[scene.children.length - 1].children[0].getObjectByName("SA_Obj29PIV")
   // spin.rotateOnAxis(new T.Vector3(1,0,0) , 1)
   controls.update()
@@ -637,4 +657,3 @@ function animate() {
   finalComposer.render();
   // camera.updateProjectionMatrix()
 }
-animate()
