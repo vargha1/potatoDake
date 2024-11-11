@@ -13,23 +13,25 @@ import RajdHani from "./RajdHani.json"
 const fontLoader = new FontLoader()
 const font = fontLoader.parse(HelvetikerFont)
 const font2 = fontLoader.parse(RajdHani)
-const textGeometry = new TextGeometry('BACK', {
+const textGeometry = new TextGeometry('X', {
   font: font,
-  size: 0.6,
+  size: 0.4,
   depth: 0.2,
 });
 textGeometry.computeBoundingBox();
-const textMat = new T.MeshStandardMaterial({ color: 0xffff00 })
+const textMat = new T.MeshStandardMaterial({ color: 0x000000 })
 const textMesh = new T.Mesh(textGeometry, textMat)
 textMesh.name = "back2"
-textMesh.rotateY(30.34)
-textMesh.rotateX(31.8)
-textMesh.rotateZ(0.2)
+textMesh.rotateY(29.64)
+// textMesh.rotateX(31.8)
+// textMesh.rotateZ(0.2)
+textMesh.position.set(-8.85, 22.709, -3.529)
 
 const audio = document.getElementById("audio");
 var click = new Audio('Sounds/click.mp3');
 var whoosh = new Audio("Sounds/whoosh.mp3")
 var ding = new Audio("Sounds/ding.mp3")
+let isOpen = true;
 const darkMaterial = new T.MeshBasicMaterial({ color: 'black' });
 const materials = {};
 const scene = new T.Scene();
@@ -83,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
       x: -18,
       y: 5,
       z: 45,
-      duration: 1.4,
-      ease: "none",
+      duration: 4,
+      ease: "expo.inOut",
       onUpdate: function () {
         controls.target = new T.Vector3(0, 13, 0)
         controls.update()
@@ -103,6 +105,17 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   bloomComposer.setSize(window.innerWidth, window.innerHeight);
 });
+
+window.removePopup = () => {
+  document.getElementById("cover").classList.add("hidden")
+  document.getElementById("wrapper").classList.add("hidden")
+  document.getElementById("popframe").classList.add("invisible")
+  document.getElementById("popframe").classList.add("opacity-0")
+  document.getElementById("popframe").classList.add("-mt-[100%]")
+  scene.remove(textMesh);
+  controls.enabled = true;
+  isOpen = true
+}
 
 let mixer, clock;
 loader.load("dake01.gltf", function VR(gltf) {
@@ -192,6 +205,7 @@ cube.name = "back"
 scene.add(cube)
 
 const geo5 = new T.BoxGeometry(1, 1.6, 0.15)
+const geo6 = new T.BoxGeometry(1.1, 0.2, 0.15)
 const material4 = new T.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 })
 const cube1 = new T.Mesh(geo5, material4)
 const cube2 = new T.Mesh(geo5, material4)
@@ -199,6 +213,8 @@ const cube3 = new T.Mesh(geo5, material4)
 const cube4 = new T.Mesh(geo5, material4)
 const cube5 = new T.Mesh(geo5, material4)
 const cube6 = new T.Mesh(geo5, material4)
+const cube7 = new T.Mesh(geo6, material4)
+const cube8 = new T.Mesh(geo6, material4)
 cube1.position.set(13.06, 8.2, -0.7)
 cube1.rotation.y = 0.6
 cube1.name = "veggie"
@@ -217,6 +233,12 @@ cube5.name = "yogu"
 cube6.position.set(14.95, 6.37, -2.1)
 cube6.rotation.y = 0.6
 cube6.name = "fajitas"
+cube7.position.set(-9.04, 21.669, -5.859)
+cube7.rotation.y = 1.5
+cube7.name = "phone1"
+cube8.position.set(-9.04, 22.369, -5.859)
+cube8.rotation.y = 1.5
+cube8.name = "phone2"
 
 scene.add(cube1)
 scene.add(cube2)
@@ -224,6 +246,8 @@ scene.add(cube3)
 scene.add(cube4)
 scene.add(cube5)
 scene.add(cube6)
+scene.add(cube7)
+scene.add(cube8)
 
 const BLOOM_SCENE = 1;
 const bloomLayer = new T.Layers();
@@ -393,12 +417,22 @@ function onMouseDown(event) {
         x: 17.6,
         y: 5.7,
         z: 3.57,
-        duration: 1.4,
-        ease: "none",
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
+      })
+      gsap.to(controls.target, {
+        x: 3,
+        y: 6.5,
+        z: -17,
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
         onUpdate: function () {
-          controls.target = new T.Vector3(3, 6.5, -17)
           controls.update()
-        },
+        }
       })
       controls.enabled = false;
       controls.maxPolarAngle = 1.73;
@@ -411,12 +445,22 @@ function onMouseDown(event) {
         x: -18,
         y: 5,
         z: 45,
-        duration: 1.4,
-        ease: "none",
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
+      })
+      gsap.to(controls.target, {
+        x: 0,
+        y: 13,
+        z: 0,
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
         onUpdate: function () {
-          controls.target = new T.Vector3(0, 13, 0)
           controls.update()
-        },
+        }
       })
       controls.enabled = true;
       controls.maxPolarAngle = 1.73;
@@ -429,14 +473,24 @@ function onMouseDown(event) {
         x: 16,
         y: 40,
         z: 36,
-        duration: 1.4,
-        ease: "none",
-        onUpdate: function () {
-          controls.target = new T.Vector3(0, 3, 0)
-          controls.update()
-        },
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
       })
       controls.maxPolarAngle = 1.5
+      gsap.to(controls.target, {
+        x: 0,
+        y: 3,
+        z: 0,
+        duration: 4,
+        ease: "expo.inOut",
+        onStart: () => controls.enabled = false,
+        onComplete: () => controls.enabled = true,
+        onUpdate: function () {
+          controls.update()
+        }
+      })
     }
 
     if (intersections[0].object.name == "polySurface106PIV") {
@@ -444,6 +498,25 @@ function onMouseDown(event) {
       whoosh.play()
       window.location.href = "https://g.page/r/CZdKKnHvnH-lEB0/review"
       controls.maxPolarAngle = 1.5
+    }
+
+    if (intersections[0].object.name == "polySurface107PIV") {
+      click.play()
+      document.getElementById("cover").classList.remove("hidden")
+      document.getElementById("wrapper").classList.remove("hidden")
+      document.getElementById("popframe").classList.remove("invisible")
+      document.getElementById("popframe").classList.remove("opacity-0")
+      document.getElementById("popframe").classList.remove("-mt-[100%]")
+      controls.enabled = true;
+      isOpen = false;
+    }
+    if (intersections[0].object.name == "phone1") {
+      click.play()
+      window.open("tel:+971506580990")
+    }
+    if (intersections[0].object.name == "phone2") {
+      click.play()
+      window.open("tel:+4407407722225")
     }
 
     if (intersections[0].object.name == "points") {
@@ -489,10 +562,63 @@ function onMouseDown(event) {
           }
         });
       });
-
       controls.enabled = true;
+    }
+
+    if (intersections[0].object.name == "polySurface108PIV" && isOpen) {
+      click.play()
+      scene.add(textMesh)
+      whoosh.play()
+      controls.minPolarAngle = 0;
+      gsap.globalTimeline.clear()
+      gsap.to(camera.position, {
+        x: -13.05,
+        y: 22.58,
+        z: -5.49,
+        duration: 4,
+        ease: "expo.inOut",
+      })
+      gsap.to(controls.target, {
+        x: -9.5,
+        y: 22.58,
+        z: -5.49,
+        duration: 4,
+        ease: "expo.inOut",
+        onComplete: () => controls.enabled = false,
+        onUpdate: function () {
+          controls.update()
+        }
+      })
       isOpen = false;
     }
+
+    if (intersections[0].object.name == "back2" && !isOpen) {
+      click.play()
+      scene.remove(textMesh)
+      whoosh.play()
+      controls.minPolarAngle = 1.1;
+      gsap.globalTimeline.clear()
+      gsap.to(camera.position, {
+        x: -18,
+        y: 5,
+        z: 45,
+        duration: 4,
+        ease: "expo.inOut",
+      })
+      gsap.to(controls.target, {
+        x: 0,
+        y: 13,
+        z: 0,
+        duration: 4,
+        ease: "expo.inOut",
+        onComplete: () => controls.enabled = false,
+        onUpdate: function () {
+          controls.update()
+        }
+      })
+      isOpen = false;
+    }
+
     function handleImgs(src) {
       for (let i = 0; i < document.getElementById("imgFrame").children.length; i++) {
         document.getElementById("imgFrame").children.item(i).classList.add("hidden")
@@ -573,8 +699,8 @@ window.removePopup = () => {
     x: -18,
     y: 5,
     z: 45,
-    duration: 1.4,
-    ease: "none",
+    duration: 4,
+    ease: "expo.inOut",
     onUpdate: function () {
       controls.target = new T.Vector3(0, 13, 0)
       controls.update()
@@ -639,7 +765,7 @@ function animate() {
   // console.log(scene.children)
   requestAnimationFrame(animate);
   mixer.update(clock.getDelta());
-  // console.log(camera.position);
+  console.log(camera.position);
 
   // const spin = scene.children[scene.children.length - 1].children[0].getObjectByName("SA_Obj29PIV")
   // spin.rotateOnAxis(new T.Vector3(1,0,0) , 1)
