@@ -15,7 +15,7 @@ const font = fontLoader.parse(HelvetikerFont)
 const font2 = fontLoader.parse(RajdHani)
 const textGeometry = new TextGeometry('X', {
   font: font,
-  size: 0.4,
+  size: 0.15,
   depth: 0.2,
 });
 textGeometry.computeBoundingBox();
@@ -25,7 +25,7 @@ textMesh.name = "back2"
 textMesh.rotateY(29.64)
 // textMesh.rotateX(31.8)
 // textMesh.rotateZ(0.2)
-textMesh.position.set(-8.85, 22.709, -3.529)
+textMesh.position.set(-8.85, 23.3, -3.529)
 
 const audio = document.getElementById("audio");
 var click = new Audio('Sounds/click.mp3');
@@ -143,7 +143,7 @@ loader.load("dake01.gltf", function VR(gltf) {
 
   const geo5 = mesh.children[0].children[0].getObjectByName("M_Dake6713PIV").geometry;
   const posAtr = geo5.attributes.position;
-  const positions = posAtr.array; // Directly access the array
+  const positions = posAtr.array;
   const vertices = [];
 
   for (let i = 0; i < posAtr.count; i++) {
@@ -206,6 +206,7 @@ scene.add(cube)
 
 const geo5 = new T.BoxGeometry(1, 1.6, 0.15)
 const geo6 = new T.BoxGeometry(1.1, 0.2, 0.15)
+const geo7 = new T.BoxGeometry(2, 0.45, 0.15)
 const material4 = new T.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 })
 const cube1 = new T.Mesh(geo5, material4)
 const cube2 = new T.Mesh(geo5, material4)
@@ -215,6 +216,7 @@ const cube5 = new T.Mesh(geo5, material4)
 const cube6 = new T.Mesh(geo5, material4)
 const cube7 = new T.Mesh(geo6, material4)
 const cube8 = new T.Mesh(geo6, material4)
+const cube9 = new T.Mesh(geo7, material4)
 cube1.position.set(13.06, 8.2, -0.7)
 cube1.rotation.y = 0.6
 cube1.name = "veggie"
@@ -239,6 +241,9 @@ cube7.name = "phone1"
 cube8.position.set(-9.04, 22.369, -5.859)
 cube8.rotation.y = 1.5
 cube8.name = "phone2"
+cube9.position.set(-7.8, 24.769, -6.159)
+cube9.rotation.y = 1.5
+cube9.name = "showFranchise"
 
 scene.add(cube1)
 scene.add(cube2)
@@ -248,6 +253,7 @@ scene.add(cube5)
 scene.add(cube6)
 scene.add(cube7)
 scene.add(cube8)
+scene.add(cube9)
 
 const BLOOM_SCENE = 1;
 const bloomLayer = new T.Layers();
@@ -496,18 +502,33 @@ function onMouseDown(event) {
     if (intersections[0].object.name == "polySurface106PIV") {
       click.play()
       whoosh.play()
-      window.location.href = "https://g.page/r/CZdKKnHvnH-lEB0/review"
+      window.open("https://g.page/r/CZdKKnHvnH-lEB0/review")
       controls.maxPolarAngle = 1.5
     }
 
     if (intersections[0].object.name == "polySurface107PIV") {
       click.play()
-      document.getElementById("cover").classList.remove("hidden")
-      document.getElementById("wrapper").classList.remove("hidden")
-      document.getElementById("popframe").classList.remove("invisible")
-      document.getElementById("popframe").classList.remove("opacity-0")
-      document.getElementById("popframe").classList.remove("-mt-[100%]")
-      controls.enabled = true;
+      whoosh.play()
+      controls.minPolarAngle = 0;
+      gsap.globalTimeline.clear()
+      gsap.to(camera.position, {
+        x: -13.05,
+        y: 26.58,
+        z: -3.49,
+        duration: 4,
+        ease: "expo.inOut",
+      })
+      gsap.to(controls.target, {
+        x: -9.5,
+        y: 26.58,
+        z: -3.49,
+        duration: 4,
+        ease: "expo.inOut",
+        onComplete: () => controls.enabled = false,
+        onUpdate: function () {
+          controls.update()
+        }
+      })
       isOpen = false;
     }
     if (intersections[0].object.name == "phone1") {
@@ -517,6 +538,15 @@ function onMouseDown(event) {
     if (intersections[0].object.name == "phone2") {
       click.play()
       window.open("tel:+4407407722225")
+    }
+    if (intersections[0].object.name == "showFranchise") {
+      click.play()
+      document.getElementById("cover").classList.remove("hidden")
+      document.getElementById("wrapper").classList.remove("hidden")
+      document.getElementById("popframe").classList.remove("invisible")
+      document.getElementById("popframe").classList.remove("opacity-0")
+      document.getElementById("popframe").classList.remove("-mt-[100%]")
+      controls.enabled = false;
     }
 
     if (intersections[0].object.name == "points") {
@@ -538,8 +568,8 @@ function onMouseDown(event) {
 
         gsap.to(vertex, {
           duration: 1.4,
-          y: 15.5, // animate to a new random y position
-          z: Math.random() * 2 + 11,
+          y: originalY + 2.5, // animate to a new random y position
+          z: Math.random() * 1.6,
           yoyo: true, // animate back to the original position
           onUpdate: () => {
             // Update the positions in the geometry
@@ -765,7 +795,7 @@ function animate() {
   // console.log(scene.children)
   requestAnimationFrame(animate);
   mixer.update(clock.getDelta());
-  console.log(camera.position);
+  // console.log(camera.position);
 
   // const spin = scene.children[scene.children.length - 1].children[0].getObjectByName("SA_Obj29PIV")
   // spin.rotateOnAxis(new T.Vector3(1,0,0) , 1)
